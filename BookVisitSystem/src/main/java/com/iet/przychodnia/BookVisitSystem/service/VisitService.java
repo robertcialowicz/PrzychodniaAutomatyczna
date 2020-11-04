@@ -20,7 +20,7 @@ public class VisitService {
         this.visitRepository = visitRepository;
     }
 
-    public int addVisit(Visit visit){
+    public UUID addVisit(Visit visit){
         return visitRepository.insertVisit(visit);
     }
 

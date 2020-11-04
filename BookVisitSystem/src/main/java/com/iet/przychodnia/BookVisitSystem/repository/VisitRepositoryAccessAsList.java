@@ -14,9 +14,9 @@ public class VisitRepositoryAccessAsList implements IVisitRepository {
     private static List<Visit> DB = new ArrayList<>();
 
     @Override
-    public int insertVisit(UUID id, Visit visit) {
+    public UUID insertVisit(UUID id, Visit visit) {
         DB.add(new Visit(id, visit.getDate(), visit.getNotes()));
-        return 1;
+        return id;
     }
 
     @Override

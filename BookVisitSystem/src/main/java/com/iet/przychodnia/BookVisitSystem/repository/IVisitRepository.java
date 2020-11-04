@@ -7,9 +7,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface IVisitRepository {
-    int insertVisit(UUID id, Visit visit);
+    UUID insertVisit(UUID id, Visit visit);
 
-    default int insertVisit(Visit visit){
+    default UUID insertVisit(Visit visit){
         UUID id = UUID.randomUUID();
         return insertVisit(id, visit);
     }

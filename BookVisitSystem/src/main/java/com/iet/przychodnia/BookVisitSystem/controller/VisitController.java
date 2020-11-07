@@ -3,6 +3,9 @@ package com.iet.przychodnia.BookVisitSystem.controller;
 import com.iet.przychodnia.BookVisitSystem.model.Visit;
 import com.iet.przychodnia.BookVisitSystem.service.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +25,8 @@ public class VisitController {
     }
 
     @PostMapping
-    public void addVisit(@Valid @NonNull @RequestBody Visit visit){
-        visitService.addVisit(visit);
+    public Visit addVisit( @RequestBody Visit visit){
+        return visitService.addVisit(visit);
     }
 
     @GetMapping
@@ -38,12 +41,21 @@ public class VisitController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteVisitById(@PathVariable("id") UUID id){
-        visitService.deleteVisit(id);
+    public ResponseEntity deleteVisitById(@PathVariable("id") UUID id){
+        if (visitService.deleteVisit(id) == 0){
+            return new ResponseEntity(HttpStatus.OK);
+        }else {
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
     }
 
     @PutMapping(path = "/{id}")
-    public void updateVisit(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Visit visitToUpdate){
-        visitService.updateVisit(id, visitToUpdate);
+    public Visit updateVisit(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Visit visitToUpdate){
+        return visitService.updateVisit(id, visitToUpdate);
+    }
+
+    @GetMapping(path="/search/{fromDate}/{toDate}")
+    public List<Visit> searchForVisitsInGivenPeriod(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate){
+        return visitService.searchForVisitsInGivenPeriod(fromDate, toDate);
     }
 }

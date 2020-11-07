@@ -20,7 +20,7 @@ public class VisitService {
         this.visitRepository = visitRepository;
     }
 
-    public UUID addVisit(Visit visit){
+    public Visit addVisit(Visit visit){
         return visitRepository.insertVisit(visit);
     }
 
@@ -36,8 +36,21 @@ public class VisitService {
         return visitRepository.deleteVisitById(id);
     }
 
-    public int updateVisit(UUID id, Visit newVisit){
+    public Visit updateVisit(UUID id, Visit newVisit){
         return visitRepository.updateVisitById(id, newVisit);
     }
 
+    public List<Visit> searchForVisitsInGivenPeriod(String fromDate, String toDate){
+        return visitRepository.searchForVisitsInGivenPeriod(fromDate, toDate);
+    }
+
+    public List<Visit> searchForAvailableVisitsInGivenPeriodBySpecialization(String fromDate, String toDate){
+        //TODO implement
+        return null;
+    }
+
+    public List<Visit> searchForAvailableVisitsInGivenPeriodByDoctor(String fromDate, String toDate){
+        //TODO implement
+        return null;
+    }
 }

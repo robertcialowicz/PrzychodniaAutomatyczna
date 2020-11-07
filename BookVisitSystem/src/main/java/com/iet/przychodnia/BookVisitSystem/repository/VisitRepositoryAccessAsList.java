@@ -14,9 +14,9 @@ public class VisitRepositoryAccessAsList implements IVisitRepository {
     private static List<Visit> DB = new ArrayList<>();
 
     @Override
-    public UUID insertVisit(UUID id, Visit visit) {
-        DB.add(new Visit(id, visit.getDate(), visit.getNotes()));
-        return id;
+    public Visit insertVisit(UUID id, Visit visit) {
+        //DB.add(new Visit(id, visit.getDatetime(), visit.getNotes()));
+        return visit;
     }
 
     @Override
@@ -42,16 +42,21 @@ public class VisitRepositoryAccessAsList implements IVisitRepository {
     }
 
     @Override
-    public int updateVisitById(UUID id, Visit visitToUpdate) {
+    public Visit updateVisitById(UUID id, Visit visitToUpdate) {
         return selectVisitById(id)
                 .map(visit -> {
                     int indexOfVisitToUpdate = DB.indexOf(visit);
                     if (indexOfVisitToUpdate >= 0){
-                        DB.set(indexOfVisitToUpdate, new Visit(id, visitToUpdate.getDate(),visitToUpdate.getNotes()));
-                        return 1;
+                        //DB.set(indexOfVisitToUpdate, new Visit(id, visitToUpdate.getDatetime(),visitToUpdate.getNotes()));
+                        return DB.get(indexOfVisitToUpdate);
                     }
-                    return 0;
+                    return null;
                 })
-                .orElse(0);
+                .orElse(null);
+    }
+
+    @Override
+    public List<Visit> searchForVisitsInGivenPeriod(String fromDate, String toDate) {
+        return null;
     }
 }

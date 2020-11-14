@@ -11,7 +11,6 @@ public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private final UUID id;
-    @NotBlank
     private final String datetime;
     private final String notes;
     private final UUID doctorID;

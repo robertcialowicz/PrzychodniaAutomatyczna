@@ -50,7 +50,7 @@ public class VisitController {
     }
 
     @PutMapping(path = "/{id}")
-    public Visit updateVisit(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Visit visitToUpdate){
+    public Visit updateVisit(@PathVariable("id") UUID id, @NonNull @RequestBody Visit visitToUpdate){
         return visitService.updateVisit(id, visitToUpdate);
     }
 

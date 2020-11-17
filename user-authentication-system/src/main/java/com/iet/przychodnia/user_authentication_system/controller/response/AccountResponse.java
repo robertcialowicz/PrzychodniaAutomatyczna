@@ -4,6 +4,7 @@ import com.iet.przychodnia.user_authentication_system.persistence.model.Account;
 import com.iet.przychodnia.user_authentication_system.persistence.model.Doctor;
 import lombok.Value;
 
+import java.util.List;
 import java.util.UUID;
 
 @Value
@@ -51,6 +52,6 @@ public class AccountResponse {
         String name;
         String surname;
         String pesel;
-        String specialization;
+        List<Integer> specialization;
     }
 }

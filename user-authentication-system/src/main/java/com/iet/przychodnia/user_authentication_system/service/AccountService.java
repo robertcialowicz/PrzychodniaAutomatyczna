@@ -3,10 +3,12 @@ package com.iet.przychodnia.user_authentication_system.service;
 import com.iet.przychodnia.user_authentication_system.controller.response.AccountResponse;
 import com.iet.przychodnia.user_authentication_system.persistence.model.Account;
 import com.iet.przychodnia.user_authentication_system.persistence.model.Doctor;
+import com.iet.przychodnia.user_authentication_system.persistence.model.DoctorSpecialization;
 import com.iet.przychodnia.user_authentication_system.persistence.model.Patient;
 import com.iet.przychodnia.user_authentication_system.persistence.repository.AccountRepository;
 import com.iet.przychodnia.user_authentication_system.controller.requests.RegistrationRequest;
 import com.iet.przychodnia.user_authentication_system.persistence.repository.DoctorRepository;
+import com.iet.przychodnia.user_authentication_system.persistence.repository.DoctorSpecializationRepository;
 import com.iet.przychodnia.user_authentication_system.persistence.repository.PatientRepository;
 import lombok.Value;
 import lombok.experimental.NonFinal;
@@ -24,11 +26,13 @@ import java.util.stream.Collectors;
 @Service
 @Value
 @NonFinal
+@Transactional
 public class AccountService {
 
     AccountRepository accountRepository;
     DoctorRepository doctorRepository;
     PatientRepository patientRepository;
+    DoctorSpecializationRepository doctorSpecializationRepository;
     PasswordEncoder bcryptEncoder;
 
     public void save(RegistrationRequest request) {
@@ -38,22 +42,26 @@ public class AccountService {
 
         if (request.getDoctorData() != null) {
             val data = request.getDoctorData();
+            val newDoctor = new Doctor(UUID.randomUUID(),
+                                       account,
+                                       data.getName(),
+                                       data.getSurname(),
+                                       data.getPesel());
 
-            doctorRepository.save(new Doctor(UUID.randomUUID(),
-                    account,
-                    data.getName(),
-                    data.getSurname(),
-                    data.getPesel(),
-                    data.getSpecialization()));
+            doctorRepository.save(newDoctor);
+
+            val specializations = request.getDoctorData().getSpecialization();
+            specializations.stream()
+                           .forEach(s -> doctorSpecializationRepository.save(new DoctorSpecialization(UUID.randomUUID(), newDoctor, s)));
         } else {
             val data = request.getPatientData();
 
             patientRepository.save(new Patient(UUID.randomUUID(),
-                    account,
-                    data.getName(),
-                    data.getSurname(),
-                    data.getPesel(),
-                    data.getBirthDate()));
+                                               account,
+                                               data.getName(),
+                                               data.getSurname(),
+                                               data.getPesel(),
+                                               data.getBirthDate()));
         }
     }
 
@@ -70,21 +78,25 @@ public class AccountService {
             accountRepository.save(new Account(acc.getId(), acc.getUsername(), encodedPassword, acc.getEmail(), acc.isDoctor()));
 
 
-            if(acc.isDoctor()) {
+            if (acc.isDoctor()) {
                 val data = doctorRepository.findByAccountId(acc.getId());
 
-                if(data.isPresent()) {
+                if (data.isPresent()) {
                     val d = data.get();
                     d.setName(request.getDoctorData().getName());
                     d.setSurname(request.getDoctorData().getSurname());
                     d.setPesel(request.getDoctorData().getPesel());
-                    d.setSpecialization(request.getDoctorData().getSpecialization());
-                    doctorRepository.save(new Doctor(d.getId(), acc, d.getName(), d.getSurname(), d.getPesel(), d.getSpecialization()));
+                    doctorRepository.save(new Doctor(d.getId(), acc, d.getName(), d.getSurname(), d.getPesel()));
+
+                    val specializations = request.getDoctorData().getSpecialization();
+                    doctorSpecializationRepository.deleteByDoctorId(d.getId());
+                    specializations.stream()
+                                   .forEach(s -> doctorSpecializationRepository.save(new DoctorSpecialization(UUID.randomUUID(), d, s)));
                 }
 
             } else {
                 val data = patientRepository.findByAccountId(acc.getId());
-                if(data.isPresent()) {
+                if (data.isPresent()) {
                     val p = data.get();
                     p.setName(request.getPatientData().getName());
                     p.setSurname(request.getPatientData().getSurname());
@@ -98,29 +110,35 @@ public class AccountService {
 
     public List<AccountResponse> findAllUsers() {
         return accountRepository.findAll()
-                .stream()
-                .map(a -> {
-                    if (a.isDoctor()) {
-                        val data = doctorRepository.findByAccountId(a.getId());
+                                .stream()
+                                .map(a -> {
+                                    if (a.isDoctor()) {
+                                        val data = doctorRepository.findByAccountId(a.getId());
 
-                        if (data.isPresent()) {
-                            val d = data.get();
+                                        if (data.isPresent()) {
+                                            val d = data.get();
+                                            val specializations = doctorSpecializationRepository.findByDoctorId(d.getId());
+                                            if (specializations.isPresent()) {
+                                                val s = specializations.get().stream()
+                                                                       .map(v -> v.getSpecializationId())
+                                                                       .collect(Collectors.toList());
+                                                return AccountResponse.fromAccountReturnDoctor(a, new AccountResponse.DoctorData(d.getName(), d.getSurname(), d.getPesel(), s));
+                                            }
+                                            return AccountResponse.fromAccountReturnDoctor(a, new AccountResponse.DoctorData(d.getName(), d.getSurname(), d.getPesel(), null));
+                                        }
+                                        return AccountResponse.fromAccountReturnDoctor(a, null);
 
-                            return AccountResponse.fromAccountReturnDoctor(a, new AccountResponse.DoctorData(d.getName(), d.getSurname(), d.getPesel(), d.getSpecialization()));
-                        }
-                        return AccountResponse.fromAccountReturnDoctor(a, null);
+                                    } else {
+                                        val data = patientRepository.findByAccountId(a.getId());
 
-                    } else {
-                        val data = patientRepository.findByAccountId(a.getId());
-
-                        if(data.isPresent()) {
-                            val p = data.get();
-                            return AccountResponse.fromAccountReturnPatient(a, new AccountResponse.PatientData(p.getName(), p.getSurname(), p.getPesel(), p.getBirthDate()));
-                        }
-                        return AccountResponse.fromAccountReturnPatient(a, null);
-                    }
-                })
-                .collect(Collectors.toList());
+                                        if (data.isPresent()) {
+                                            val p = data.get();
+                                            return AccountResponse.fromAccountReturnPatient(a, new AccountResponse.PatientData(p.getName(), p.getSurname(), p.getPesel(), p.getBirthDate()));
+                                        }
+                                        return AccountResponse.fromAccountReturnPatient(a, null);
+                                    }
+                                })
+                                .collect(Collectors.toList());
     }
 
     public Optional<AccountResponse> findUserById(UUID id) {
@@ -132,15 +150,15 @@ public class AccountService {
 
                 if (data.isPresent()) {
                     val d = data.get();
-
-                    return AccountResponse.fromAccountReturnDoctor(a, new AccountResponse.DoctorData(d.getName(), d.getSurname(), d.getPesel(), d.getSpecialization()));
+                    //fixme
+                    return AccountResponse.fromAccountReturnDoctor(a, new AccountResponse.DoctorData(d.getName(), d.getSurname(), d.getPesel(), null));
                 }
 
                 return AccountResponse.fromAccountReturnDoctor(a, null);
             } else {
                 val data = patientRepository.findByAccountId(a.getId());
 
-                if(data.isPresent()) {
+                if (data.isPresent()) {
                     val p = data.get();
                     return AccountResponse.fromAccountReturnPatient(a, new AccountResponse.PatientData(p.getName(), p.getSurname(), p.getPesel(), p.getBirthDate()));
                 }
@@ -149,13 +167,17 @@ public class AccountService {
         });
     }
 
-    @Transactional
     public void deleteUser(UUID id) {
         val account = accountRepository.findById(id);
-        if(account.isPresent()) {
+        if (account.isPresent()) {
             val a = account.get();
-            if(a.isDoctor()) {
+            if (a.isDoctor()) {
+                val doctor = doctorRepository.findByAccountId(id);
+                if(doctor.isPresent()) {
+                    doctorSpecializationRepository.deleteByDoctorId(doctor.get().getId());
+                }
                 doctorRepository.deleteByAccountId(id);
+
             } else {
                 patientRepository.deleteByAccountId(id);
 

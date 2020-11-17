@@ -3,6 +3,7 @@ package com.iet.przychodnia.user_authentication_system.controller.requests;
 import lombok.Value;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @Getter - gettery
@@ -45,6 +46,6 @@ public class RegistrationRequest {
         String name;
         String surname;
         String pesel;
-        String specialization;
+        List<Integer> specialization;
     }
 }

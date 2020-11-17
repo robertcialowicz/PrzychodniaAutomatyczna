@@ -3,15 +3,18 @@ package com.iet.przychodnia.user_authentication_system.persistence.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = {"specializations"})
 public class Doctor {
     @Id
     private UUID id;
@@ -27,5 +30,5 @@ public class Doctor {
     private String surname;
 
     private String pesel;
-    private String specialization;
+
 }

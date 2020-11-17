@@ -15,7 +15,7 @@ public class Receipt {
     private final UUID id;
     private final UUID patientId;
     private final UUID doctorId;
-    private final List<UUID> medicalIds;
+    private final UUID medicalIds;
 
     public Receipt() {
         this.id = null;
@@ -27,7 +27,7 @@ public class Receipt {
     public Receipt(@JsonProperty("id") UUID id,
                    @JsonProperty("patientId") UUID patientId,
                    @JsonProperty("doctorId") UUID doctorId,
-                   @JsonProperty("medicalIds") List<UUID> medicalIds) {
+                   @JsonProperty("medicalIds") UUID medicalIds) {
         this.id = id;
         this.patientId = patientId;
         this.doctorId = doctorId;
@@ -56,7 +56,7 @@ public class Receipt {
         return doctorId;
     }
 
-    public List<UUID> getMedicalIds() {
+    public UUID getMedicalIds() {
         return medicalIds;
     }
 }

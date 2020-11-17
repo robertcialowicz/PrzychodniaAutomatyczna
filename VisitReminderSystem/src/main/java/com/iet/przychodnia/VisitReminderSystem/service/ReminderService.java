@@ -20,14 +20,17 @@ public class ReminderService {
     }
 
     public Reminder insertReminder (Reminder reminder){
+        //TODO implement
         return reminderRepository.insertReminder(reminder);
     }
 
     public List<Reminder> selectAllRemindersForGivenUser (UUID patientId){
+        //TODO implement
         return  reminderRepository.selectAllRemindersForGivenPatient(patientId);
     }
 
     public int deleteOldReminders (UUID patientId){
+        //TODO implement
         return reminderRepository.deleteOldReminders(patientId);
     }
 

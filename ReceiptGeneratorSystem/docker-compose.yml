@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  dbreceipts:
+    image: dbreceipts
+    build: ./database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./database/dbMedicalsVol:/var/opt/mssql/data
+
+  receiptssystem:
+    image: receiptssystem
+    build: .
+    ports:
+      - 8081:8080
+    depends_on:
+      - dbreceipts
+    links:
+      - "dbreceipts:dbreceipts"

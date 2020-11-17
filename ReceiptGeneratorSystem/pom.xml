@@ -13,7 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ReceiptGeneratorSystem</name>
 	<description>ReceiptGeneratorSystem</description>
-
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Internal repo</name>
+			<url>file://./../Artifacts</url>
+		</repository>
+	</distributionManagement>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

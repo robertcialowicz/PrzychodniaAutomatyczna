@@ -26,6 +26,7 @@ public class ReminderController {
 
     @GetMapping
     public List<Reminder> selectAllRemindersForGivenPatient (UUID patientId){
+        //TODO brakujacy parametr
         return reminderService.selectAllRemindersForGivenUser(patientId);
     }
 

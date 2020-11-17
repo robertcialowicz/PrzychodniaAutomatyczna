@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  dbreminders:
+    image: dbreminders
+    build: ./database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./database/dbRemindersVol:/var/opt/mssql/data
+
+  reminderssystem:
+    image: remindersystem
+    build: .
+    ports:
+      - 8083:8080
+    depends_on:
+      - dbreminders
+    links:
+      - "dbreminders:dbreminders"

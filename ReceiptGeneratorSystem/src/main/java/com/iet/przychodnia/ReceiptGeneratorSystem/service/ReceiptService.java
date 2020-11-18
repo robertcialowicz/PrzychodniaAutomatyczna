@@ -24,9 +24,8 @@ public class ReceiptService {
         return receiptRepository.insertReceipt(receipt);
     }
 
-    public List<Medical> getReceiptsForPatient(UUID patientId){
-        //TODO implement
-        return null;
+    public List<Receipt> getReceiptsForPatient(UUID patientId){
+        return receiptRepository.getReceiptsForPatient(patientId);
     }
 
 }

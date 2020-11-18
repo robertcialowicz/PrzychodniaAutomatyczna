@@ -1,5 +1,6 @@
 package com.iet.przychodnia.VisitReminderSystem.controller;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.iet.przychodnia.VisitReminderSystem.model.Reminder;
 import com.iet.przychodnia.VisitReminderSystem.service.ReminderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,8 @@ public class ReminderController {
         return reminderService.insertReminder(reminder);
     }
 
-    @GetMapping
-    public List<Reminder> selectAllRemindersForGivenPatient (UUID patientId){
-        //TODO brakujacy parametr
+    @GetMapping(path = "/patient/{id}")
+    public List<Reminder> selectAllRemindersForGivenPatient(@PathVariable("id") UUID patientId){
         return reminderService.selectAllRemindersForGivenUser(patientId);
     }
 

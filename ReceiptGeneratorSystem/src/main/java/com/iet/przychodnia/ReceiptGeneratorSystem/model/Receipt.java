@@ -27,7 +27,7 @@ public class Receipt {
     public Receipt(@JsonProperty("id") UUID id,
                    @JsonProperty("patientId") UUID patientId,
                    @JsonProperty("doctorId") UUID doctorId,
-                   @JsonProperty("medicalIds") UUID medicalIds) {
+                   @JsonProperty("medicalsId") UUID medicalIds) {
         this.id = id;
         this.patientId = patientId;
         this.doctorId = doctorId;

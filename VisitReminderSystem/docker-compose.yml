@@ -9,6 +9,8 @@ services:
       ACCEPT_EULA: "Y"
     volumes:
       - ./database/dbRemindersVol:/var/opt/mssql/data
+    ports:
+      - 1434:1433
 
   reminderssystem:
     image: remindersystem

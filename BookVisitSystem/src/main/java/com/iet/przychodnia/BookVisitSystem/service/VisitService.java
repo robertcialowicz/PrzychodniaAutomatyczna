@@ -34,11 +34,20 @@ public class VisitService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         JSONObject visitObjectJSON = new JSONObject();
-        visitObjectJSON.put("patientID", addedVisit.getPatientID());
-        visitObjectJSON.put("doctorID", addedVisit.getDoctorID());
-        visitObjectJSON.put("visitID", addedVisit.getId());
+        visitObjectJSON.put("patientID", addedVisit.getPatientID().toString());
+        visitObjectJSON.put("doctorID", addedVisit.getDoctorID().toString());
+        visitObjectJSON.put("visitID", addedVisit.getId().toString());
+        visitObjectJSON.put("datetime", addedVisit.getDatetime());
         HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
-        restTemplate.postForEntity("http://remindersystem:8080", request, String.class);
+        try{
+            //release
+            restTemplate.postForEntity("http://reminderssystem:8080/api/reminder", request, Void.class);
+            //debug
+            //restTemplate.postForEntity("http://localhost:8082/api/reminder", request, Void.class);
+        } catch (Exception e){
+            e.getMessage();
+        }
+
         //TODO ewentualnie zaktualizować adres seriwsu
 
         return addedVisit;
@@ -65,11 +74,18 @@ public class VisitService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         JSONObject visitObjectJSON = new JSONObject();
-        visitObjectJSON.put("patientID", updatedVisit.getPatientID());
-        visitObjectJSON.put("doctorID", updatedVisit.getDoctorID());
-        visitObjectJSON.put("medicalsID", updatedVisit.getMediacalsID());
+        visitObjectJSON.put("patientId", updatedVisit.getPatientID().toString());
+        visitObjectJSON.put("doctorId", updatedVisit.getDoctorID().toString());
+        visitObjectJSON.put("medicalsId", updatedVisit.getMediacalsID().toString());
         HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
-        restTemplate.postForEntity("http://receiptsystem:8080", request, String.class);
+        try{
+            //release
+            restTemplate.postForEntity("http://receiptssystem:8081/api/receipt", request, Void.class);
+            //debug
+            //restTemplate.postForEntity("http://localhost:8081/api/receipt", request, Void.class);
+        } catch (Exception e){
+            e.getMessage();
+        }
         //TODO ewentualnie zaktualizować adres seriwsu
 
         return updatedVisit;
@@ -80,22 +96,22 @@ public class VisitService {
     }
 
     public List<Visit> searchForVisitsInGivenPeriodForPatient(String fromDate, String toDate, UUID patientId){
-        //TODO implement
-        return null;
+        return visitRepository.searchForVisitsInGivenPeriodForPatient(fromDate, toDate, patientId);
     }
 
     public List<Visit> searchForVisitsInGivenPeriodForDoctor(String fromDate, String toDate, UUID doctorId){
-        //TODO implement
-        return null;
+        return visitRepository.searchForVisitsInGivenPeriodForDoctor(fromDate, toDate, doctorId);
     }
 
     public List<Visit> searchForAvailableVisitsInGivenPeriodBySpecialization(String fromDate, String toDate, UUID specializationId){
-        //TODO implement
-        return null;
+        return FindFreeVisits.findFreeVisitsBetweenDatesWhenReservedAreGiven(fromDate,
+                toDate,
+                visitRepository.searchForVisitsInGivenPeriodBySpecialization(fromDate, toDate, specializationId));
     }
 
     public List<Visit> searchForAvailableVisitsInGivenPeriodByDoctor(String fromDate, String toDate, UUID doctorId){
-        //TODO implement
-        return null;
+        return FindFreeVisits.findFreeVisitsBetweenDatesWhenReservedAreGiven(fromDate,
+                toDate,
+                visitRepository.searchForVisitsInGivenPeriodForDoctor(fromDate, toDate, doctorId));
     }
 }

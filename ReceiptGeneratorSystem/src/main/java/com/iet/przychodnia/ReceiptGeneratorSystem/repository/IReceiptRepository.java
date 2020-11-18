@@ -2,6 +2,7 @@ package com.iet.przychodnia.ReceiptGeneratorSystem.repository;
 
 import com.iet.przychodnia.ReceiptGeneratorSystem.model.Receipt;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface IReceiptRepository {
@@ -13,5 +14,5 @@ public interface IReceiptRepository {
         return insertReceipt(id, receipt);
     }
 
-    Receipt selectReceipt(UUID id);
+    List<Receipt> getReceiptsForPatient(UUID id);
 }

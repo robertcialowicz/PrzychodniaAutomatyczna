@@ -4,6 +4,8 @@ import com.iet.przychodnia.BookVisitSystem.model.Visit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -112,4 +114,67 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
         });
         return visits;
     }
+
+    @Override
+    public List<Visit> searchForVisitsInGivenPeriodForPatient(String fromDate, String toDate, UUID patientId){
+        final String sql = "SELECT id, date, notes, doctorID, patientID, specializationID, medicalsID FROM Visits WHERE (date BETWEEN ? AND ?) AND patientID=? ";
+        List<Visit> visits = jdbcTemplate.query(
+                sql,
+                new Object[]{fromDate, toDate, patientId.toString()},
+                (resultSet, i) -> {
+                    UUID id = UUID.fromString(resultSet.getString("id").trim());
+                    String date = resultSet.getString("date");
+                    String notes = resultSet.getString("notes");
+                    UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
+                    UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
+                    UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
+                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
+                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
+                });
+
+        return visits;
+    }
+
+    @Override
+    public List<Visit> searchForVisitsInGivenPeriodForDoctor(String fromDate, String toDate, UUID doctorId){
+        final String sql = "SELECT id, date, notes, doctorID, patientID, specializationID, medicalsID FROM Visits WHERE (date BETWEEN ? AND ?) AND doctorId=? ";
+        List<Visit> visits = jdbcTemplate.query(
+                sql,
+                new Object[]{fromDate, toDate, doctorId.toString()},
+                (resultSet, i) -> {
+                    UUID id = UUID.fromString(resultSet.getString("id").trim());
+                    String date = resultSet.getString("date");
+                    String notes = resultSet.getString("notes");
+                    UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
+                    UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
+                    UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
+                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
+                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
+                });
+
+        return visits;
+    }
+
+    @Override
+    public List<Visit> searchForVisitsInGivenPeriodBySpecialization(String fromDate, String toDate, UUID specializationId){
+        final String sql = "SELECT id, date, notes, doctorID, patientID, specializationID, medicalsID FROM Visits WHERE (date BETWEEN ? AND ?) AND specializationId=? ";
+        List<Visit> visits = jdbcTemplate.query(
+                sql,
+                new Object[]{fromDate, toDate, specializationId.toString()},
+                (resultSet, i) -> {
+                    UUID id = UUID.fromString(resultSet.getString("id").trim());
+                    String date = resultSet.getString("date");
+                    String notes = resultSet.getString("notes");
+                    UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
+                    UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
+                    UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
+                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
+                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
+                });
+        return visits;
+    }
+
 }

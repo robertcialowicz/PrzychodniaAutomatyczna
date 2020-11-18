@@ -9,6 +9,8 @@ services:
       ACCEPT_EULA: "Y"
     volumes:
       - ./database/dbMedicalsVol:/var/opt/mssql/data
+    ports:
+      - 1435:1433
 
   receiptssystem:
     image: receiptssystem
@@ -19,3 +21,4 @@ services:
       - dbreceipts
     links:
       - "dbreceipts:dbreceipts"
+    

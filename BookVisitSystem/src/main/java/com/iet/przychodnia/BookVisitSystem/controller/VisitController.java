@@ -58,4 +58,24 @@ public class VisitController {
     public List<Visit> searchForVisitsInGivenPeriod(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate){
         return visitService.searchForVisitsInGivenPeriod(fromDate, toDate);
     }
+
+    @GetMapping(path="/search/patient/{id}/{fromDate}/{toDate}")
+    public List<Visit> searchForVisitsInGivenPeriodForPatient(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate, @PathVariable("id") UUID id){
+        return visitService.searchForVisitsInGivenPeriodForPatient(fromDate, toDate, id);
+    }
+
+    @GetMapping(path="/search/doctor/{id}/{fromDate}/{toDate}")
+    public List<Visit> searchForVisitsInGivenPeriodForDoctor(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate, @PathVariable("id") UUID id){
+        return visitService.searchForVisitsInGivenPeriodForDoctor(fromDate, toDate, id);
+    }
+
+    @GetMapping(path="/search/freeBySpec/{id}/{fromDate}/{toDate}")
+    public List<Visit> searchForAvailableVisitsInGivenPeriodBySpecialization(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate, @PathVariable("id") UUID id){
+        return visitService.searchForAvailableVisitsInGivenPeriodBySpecialization(fromDate, toDate, id);
+    }
+
+    @GetMapping(path="/search/freeByDoc/{id}/{fromDate}/{toDate}")
+    public List<Visit> searchForAvailableVisitsInGivenPeriodByDoctor(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate, @PathVariable("id") UUID id){
+        return visitService.searchForAvailableVisitsInGivenPeriodByDoctor(fromDate, toDate, id);
+    }
 }

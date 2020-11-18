@@ -24,4 +24,10 @@ public interface IVisitRepository {
 
     List<Visit> searchForVisitsInGivenPeriod(String fromDate, String toDate);
 
+    public List<Visit> searchForVisitsInGivenPeriodForPatient(String fromDate, String toDate, UUID patientId);
+
+    public List<Visit> searchForVisitsInGivenPeriodForDoctor(String fromDate, String toDate, UUID doctorId);
+
+    public List<Visit> searchForVisitsInGivenPeriodBySpecialization(String fromDate, String toDate, UUID specializationId);
+
 }

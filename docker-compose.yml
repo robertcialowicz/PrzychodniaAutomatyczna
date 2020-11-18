@@ -1,0 +1,65 @@
+services:
+  dbreminders:
+    image: dbreminders
+    build: ./VisitReminderSystem/database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./VisitReminderSystem/database/dbRemindersVol:/var/opt/mssql/data
+    #ports:
+    #  - 1434:1433
+
+  reminderssystem:
+    image: reminderssystem
+    build: ./VisitReminderSystem/
+    ports:
+      - 8083:8080
+    depends_on:
+      - dbreminders
+    links:
+      - "dbreminders:dbreminders"
+
+  dbreceipts:
+    image: dbreceipts
+    build: ./ReceiptGeneratorSystem/database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./ReceiptGeneratorSystem/database/dbMedicalsVol:/var/opt/mssql/data
+    #ports:
+    #  - 1435:1433
+
+  receiptssystem:
+    image: receiptssystem
+    build: ./ReceiptGeneratorSystem/
+    ports:
+      - 8082:8080
+    depends_on:
+      - dbreceipts
+    links:
+      - "dbreceipts:dbreceipts"
+
+  dbvisits:
+    image: dbvisits
+    build: ./BookVisitSystem/database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./BookVisitSystem/database/dbVisitsVol:/var/opt/mssql/data
+    #ports:
+    #  - 1436:1433
+
+  visitsystem:
+    image: visitsystem
+    build: ./BookVisitSystem/
+    ports:
+      - 8081:8080
+    depends_on:
+      - dbvisits
+    links:
+      - "dbvisits:dbvisits"
+      - "reminderssystem:reminderssystem"
+      - "receiptssystem:receiptssystem"

@@ -14,32 +14,26 @@ public class Reminder {
     private final UUID patientID;
     private final UUID doctorID;
     private final UUID visitID;
+    private final String datetime;
 
     public Reminder() {
         this.id = null;
         this.patientID = null;
         this.doctorID = null;
         this.visitID = null;
+        this.datetime = null;
     }
 
     public Reminder(@JsonProperty("id") UUID id,
                     @JsonProperty("patientID") UUID patientID,
                     @JsonProperty("doctorID") UUID doctorID,
-                    @JsonProperty("date") UUID visitID) {
+                    @JsonProperty("visitID") UUID visitID,
+                    @JsonProperty("datetime") String datetime) {
         this.id = id;
         this.patientID = patientID;
         this.doctorID = doctorID;
         this.visitID = visitID;
-    }
-
-    @Override
-    public String toString() {
-        return "Reminder{" +
-                "id=" + id +
-                ", patientID=" + patientID +
-                ", doctorID=" + doctorID +
-                ", datetime='" + visitID + '\'' +
-                '}';
+        this.datetime = datetime;
     }
 
     public UUID getId() {
@@ -54,7 +48,22 @@ public class Reminder {
         return doctorID;
     }
 
-    public UUID getDatetime() {
+    public UUID getVisitID() {
         return visitID;
+    }
+
+    public String getDatetime() {
+        return datetime;
+    }
+
+    @Override
+    public String toString() {
+        return "Reminder{" +
+                "id=" + id +
+                ", patientID=" + patientID +
+                ", doctorID=" + doctorID +
+                ", visitID=" + visitID +
+                ", datetime='" + datetime + '\'' +
+                '}';
     }
 }

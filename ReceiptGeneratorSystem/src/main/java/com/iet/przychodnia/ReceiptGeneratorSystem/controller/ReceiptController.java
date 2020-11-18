@@ -1,10 +1,12 @@
 package com.iet.przychodnia.ReceiptGeneratorSystem.controller;
 
+import com.iet.przychodnia.ReceiptGeneratorSystem.model.Medical;
 import com.iet.przychodnia.ReceiptGeneratorSystem.model.Receipt;
 import com.iet.przychodnia.ReceiptGeneratorSystem.service.ReceiptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -23,15 +25,9 @@ public class ReceiptController {
         return receiptService.insertReceipt(receipt);
     }
 
-    //@GetMapping(path = "/{id}")
-    //public Receipt selectReceipt (@PathVariable UUID id){
-    //    return receiptController.selectReceipt(id);
-    //}
-
-    //@GetMapping(path = "/pdf/{id}")
-    //public Receipt generateReceipt (@PathVariable("id")UUID id){
-    //    //TODO generate pdf or sth here
-    //    return null;
-    //}
+    @GetMapping(path = "/patient/{id}")
+    public List<Receipt> generateReceiptsForGivenPatient (@PathVariable("id") UUID patientId){
+        return receiptService.getReceiptsForPatient(patientId);
+    }
 
 }

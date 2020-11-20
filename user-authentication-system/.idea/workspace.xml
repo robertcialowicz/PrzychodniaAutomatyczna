@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f83545ae-610e-4fd7-91cb-4eba894577df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/exceptions/JwtExpiredException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/exceptions/JwtInvalidSignatureException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/exceptions/UnauthorizedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/Jwt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/JwtRequestFilter2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/JwtTokenAuthentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/RSA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/dbUsers.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/dbUsers.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/dbUsers_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/dbUsers_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/master.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/mastlog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/model.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/modellog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb2.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb3.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb4.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb4.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb5.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb5.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb6.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb6.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb7.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb8.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/templog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/UserAuthenticationSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/UserAuthenticationSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtRequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/JwtAuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/JwtAuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1k0eFlbyvr6P8U1g1FwslPEbk7j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/api-gateway" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/userauthenticationsystem" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.UserAuthenticationSystemApplication">
+    <configuration name="UserAuthenticationSystemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.iet.przychodnia.user_authentication_system.UserAuthenticationSystemApplication" />
+      <module name="user-authentication-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iet.przychodnia.user_authentication_system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="database/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="dbusers-latest" />
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="dbUsers-latest" />
+          <option name="entrypoint" value="" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="MSSQL_SA_PASSWORD" />
+                <option name="value" value="Password-123" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="ACCEPT_EULA" />
+                <option name="value" value="Y" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="1433" />
+                <option name="hostPort" value="1433" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="database/Dockerfile" />
+          <option name="volumeBindings">
+            <list>
+              <DockerVolumeBindingImpl>
+                <option name="containerPath" value="/var/opt/mssql/data" />
+                <option name="hostPath" value="$PROJECT_DIR$/database/dbUsersVol" />
+              </DockerVolumeBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.database/Dockerfile" />
+      <item itemvalue="Application.UserAuthenticationSystemApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserAuthenticationSystemApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f83545ae-610e-4fd7-91cb-4eba894577df" name="Default Changelist" comment="" />
+      <created>1604841836587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604841836587</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="67" y="101" width="1084" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605878615752">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="67" y="101" width="1084" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605878615752" />
+    <state x="570" y="164" width="826" height="813" key="#com.intellij.ide.util.MemberChooser" timestamp="1605867470795">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="570" y="164" width="826" height="813" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1046@0.0.1920.1046" timestamp="1605867470795" />
+    <state x="1138" y="192" width="583" height="667" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1605878656363">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="1138" y="192" width="583" height="667" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605878656363" />
+    <state x="259" y="447" width="1401" height="157" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1604842036169">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="259" y="447" width="1401" height="157" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1604842036169" />
+    <state x="616" y="391" width="687" height="278" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605830336265">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="616" y="391" width="687" height="278" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1046@0.0.1920.1046" timestamp="1605830336265" />
+    <state x="632" y="99" width="646" height="854" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605552232467">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="632" y="99" width="646" height="854" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605552232467" />
+    <state x="591" y="364" width="727" height="323" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605547812469">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="591" y="364" width="727" height="323" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1046@0.0.1920.1046" timestamp="1605547812469" />
+    <state x="1218" y="281" width="424" height="490" key="FileChooserDialogImpl" timestamp="1605813129238">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="1218" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1605813129238" />
+    <state width="914" height="338" key="GridCell.Tab.0.bottom" timestamp="1605878598771">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state width="914" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598771" />
+    <state width="914" height="338" key="GridCell.Tab.0.center" timestamp="1605878598770">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state width="914" height="338" key="GridCell.Tab.0.center/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598770" />
+    <state width="914" height="338" key="GridCell.Tab.0.left" timestamp="1605878598769">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state width="914" height="338" key="GridCell.Tab.0.left/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598769" />
+    <state width="914" height="338" key="GridCell.Tab.0.right" timestamp="1605878598771">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state width="914" height="338" key="GridCell.Tab.0.right/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598771" />
+    <state x="493" y="181" width="924" height="690" key="Maven.ArtifactSearchDialog" timestamp="1605369043414">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="493" y="181" width="924" height="690" key="Maven.ArtifactSearchDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605369043414" />
+    <state x="118" y="37" width="1735" height="1009" key="SettingsEditor" timestamp="1605651589830">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="118" y="37" width="1735" height="1009" key="SettingsEditor/0.0.1920.1046@0.0.1920.1046" timestamp="1605651589830" />
+    <state width="539" height="446" key="SwitcherDM" timestamp="1605867713087">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state width="539" height="446" key="SwitcherDM/0.0.1920.1046@0.0.1920.1046" timestamp="1605867713087" />
+    <state x="443" y="344" width="545" height="189" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1605637913869">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="443" y="344" width="545" height="189" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1920.1046@0.0.1920.1046" timestamp="1605637913869" />
+    <state x="443" y="344" width="744" height="189" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize" timestamp="1605637981021">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="443" y="344" width="744" height="189" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/0.0.1920.1046@0.0.1920.1046" timestamp="1605637981021" />
+    <state x="408" y="67" width="1308" height="849" key="find.popup" timestamp="1605864982642">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="408" y="67" width="1308" height="849" key="find.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1605864982642" />
+    <state x="624" y="237" key="run.anything.popup" timestamp="1605864129565">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1605864129565" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1605878532635">
+      <screen x="0" y="0" width="1920" height="1046" />
+    </state>
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1605878532635" />
+  </component>
+</project>

@@ -8,9 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableZuulProxy
 @EnableEurekaClient
-@EnableFeignClients
 public class UserAuthenticationSystemApplication {
 
 	public static void main(String[] args) {

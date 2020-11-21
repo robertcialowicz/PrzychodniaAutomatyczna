@@ -1,0 +1,17 @@
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/repository/UserRepository.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtUserDetailsService.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/Account.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtTokenUtil.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/controller/UserController.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/controller/response/JwtResponse.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtRequestFilter.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/service/UserService.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/WebSecurityConfig.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/controller/requests/UserRequest.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/controller/JwtAuthenticationController.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/SwaggerConfig.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtAuthenticationEntryPoint.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/UserAuthenticationSystemApplication.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/controller/requests/JwtRequest.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/config/BCryptConfig.java
+/home/magda/github/PrzychodniaAutomatyczna/user-authentication-system/src/main/java/com/iet/przychodnia/user_authentication_system/controller/response/AccountResponse.java

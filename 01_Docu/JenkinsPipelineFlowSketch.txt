@@ -1,0 +1,7 @@
+sciagnij repo z mastera
+rozpoznaj projekty (dla kazdego z podsystemu osobny rownloegly flow)
+	zbuduj java spring project
+	zbuduj dockerfile java
+	zbuduj dockerfile bazadanych
+	jeżeli wszystko na passed to pusznij na repo master artefakty
+	docker compose jeśli wszystkie poprzednie kroki to success

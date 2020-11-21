@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  dbvisits:
+    image: dbvisits
+    build: ./database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./database/dbVisitsVol:/var/opt/mssql/data
+
+  visitsystem:
+    image: visitsystem
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - dbvisits
+    links:
+      - "dbvisits:dbvisits"

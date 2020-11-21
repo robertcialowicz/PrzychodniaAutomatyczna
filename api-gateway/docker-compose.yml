@@ -1,0 +1,7 @@
+version: '3.4'
+
+  gatewaysystem:
+    image: gatewaysystem
+    build: .
+    ports:
+      - 9092:9092

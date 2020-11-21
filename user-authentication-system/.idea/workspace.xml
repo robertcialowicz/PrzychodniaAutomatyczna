@@ -23,12 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f83545ae-610e-4fd7-91cb-4eba894577df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/dbVisits_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/dbVisits_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/master.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/mastlog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/model.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/modellog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb2.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb3.ndf" afterDir="false" />
@@ -38,53 +36,12 @@
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb7.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb8.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/dbReceipts_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/dbReceipts_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/master.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/mastlog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/model.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/modellog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/msdblog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb2.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb3.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb4.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb4.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb5.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb5.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb6.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb6.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb7.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb8.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/dbReminders_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/dbReminders_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/master.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/mastlog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/model.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/modellog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/msdblog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb2.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb3.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb4.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb4.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb5.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb5.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb6.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb6.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb7.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb8.ndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discavery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../discavery-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discavery-server/src/test/java/com/iet/przychodnia/discaveryserver/DiscaveryServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discavery-server/src/test/java/com/iet/przychodnia/discaveryserver/DiscaveryServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/user-authentication-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/user-authentication-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/dbUsers.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/dbUsers.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/dbUsers_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/dbUsers_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/master.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/mastlog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/model.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/modellog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/msdbdata.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/msdbdata.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb2.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb3.ndf" afterDir="false" />
@@ -96,8 +53,8 @@
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/templog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/iet/przychodnia/user_authentication_system/UserAuthenticationSystemApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/iet/przychodnia/user_authentication_system/UserAuthenticationSystemApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,6 +214,7 @@
       <workItem from="1605962461423" duration="1996000" />
       <workItem from="1605977550703" duration="77000" />
       <workItem from="1605979560658" duration="1022000" />
+      <workItem from="1605983562378" duration="124000" />
     </task>
     <servers />
   </component>
@@ -310,28 +268,28 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="1218" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1605813129238" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605980763386">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605983685750">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605980763386" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685750" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630674" />
     <state width="914" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598771" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605980763386">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605983685749">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605980763386" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685749" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630673" />
     <state width="914" height="338" key="GridCell.Tab.0.center/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598770" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605980763385">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605983685749">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605980763385" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685749" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630673" />
     <state width="914" height="338" key="GridCell.Tab.0.left/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598769" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605980763386">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605983685750">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605980763386" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685750" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630674" />
     <state width="914" height="338" key="GridCell.Tab.0.right/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598771" />
     <state x="493" y="181" width="924" height="690" key="Maven.ArtifactSearchDialog" timestamp="1605369043414">

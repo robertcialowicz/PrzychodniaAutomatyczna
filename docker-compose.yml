@@ -1,9 +1,11 @@
 services:
+
   eurekasystem:
     image: eurekasystem
     build: ./discavery-server/
     ports: 
       - 8761:8761
+
 
   zuulgwsystem:
     image: zuulgwsystem
@@ -13,7 +15,12 @@ services:
     links:
       - "visitsystem:visitsystem"
       - "eurekasystem:eurekasystem"
+      - "reminderssystem:reminderssystem"
+      - "receiptssystem:receiptssystem"
       - "user-authentication-system:user-authentication-system"
+
+
+
 
   dbusers:
     image: dbusers
@@ -23,18 +30,75 @@ services:
       ACCEPT_EULA: "Y"
     volumes: 
       - ./user-authentication-system/database/dbUsersVol:/var/opt/mssql/data
-    #ports:
-    #  - "1435:1433"
+    ports:
+      - "1435:1433"
 
   user-authentication-system:
     image: user-authentication-system
     build: ./user-authentication-system/
+    ports:
+      - 9093:9093
     depends_on:
       - dbusers
       - eurekasystem
     links: 
       - "dbusers:dbusers"
       - "eurekasystem:eurekasystem"
+
+
+
+
+  dbreminders:
+    image: dbreminders
+    build: ./VisitReminderSystem/database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./VisitReminderSystem/database/dbRemindersVol:/var/opt/mssql/data
+    ports:
+      - 1434:1433
+
+  reminderssystem:
+    image: reminderssystem
+    build: ./VisitReminderSystem/
+    ports:
+      - 9095:9095
+    depends_on:
+      - dbreminders
+      - eurekasystem
+    links:
+      - "dbreminders:dbreminders"
+      - "eurekasystem:eurekasystem"
+
+
+
+
+  dbreceipts:
+    image: dbreceipts
+    build: ./ReceiptGeneratorSystem/database
+    environment:
+      MS_SQL_PASSWORD: "Password-123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./ReceiptGeneratorSystem/database/dbMedicalsVol:/var/opt/mssql/data
+    ports:
+      - 1437:1433
+
+  receiptssystem:
+    image: receiptssystem
+    build: ./ReceiptGeneratorSystem/
+    ports:
+      - 9096:9096
+    depends_on:
+      - dbreceipts
+      - eurekasystem
+    links:
+      - "dbreceipts:dbreceipts"
+      - "eurekasystem:eurekasystem"
+
+
+
 
   dbvisits:
     image: dbvisits
@@ -44,17 +108,19 @@ services:
       ACCEPT_EULA: "Y"
     volumes:
       - ./BookVisitSystem/database/dbVisitsVol:/var/opt/mssql/data
-    #ports:
-    #  - 1436:1433
+    ports:
+      - 1436:1433
 
   visitsystem:
     image: visitsystem
     build: ./BookVisitSystem/
-    #ports:
-    #  - 8081:8080
+    ports:
+      - 9094:9094
     depends_on:
       - dbvisits
       - eurekasystem
     links:
       - "dbvisits:dbvisits"
+      - "reminderssystem:reminderssystem"
+      - "receiptssystem:receiptssystem"
       - "eurekasystem:eurekasystem"

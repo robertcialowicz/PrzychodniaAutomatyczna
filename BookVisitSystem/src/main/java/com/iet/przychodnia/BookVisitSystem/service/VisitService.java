@@ -41,7 +41,7 @@ public class VisitService {
         HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
         try{
             //release
-            restTemplate.postForEntity("http://reminderssystem:8080/api/reminder", request, Void.class);
+            restTemplate.postForEntity("http://reminderssystem:9095/api/reminder", request, Void.class);
             //debug
             //restTemplate.postForEntity("http://localhost:8082/api/reminder", request, Void.class);
         } catch (Exception e){
@@ -80,7 +80,7 @@ public class VisitService {
         HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
         try{
             //release
-            restTemplate.postForEntity("http://receiptssystem:8081/api/receipt", request, Void.class);
+            restTemplate.postForEntity("http://receiptssystem:9096/api/receipt", request, Void.class);
             //debug
             //restTemplate.postForEntity("http://localhost:8081/api/receipt", request, Void.class);
         } catch (Exception e){

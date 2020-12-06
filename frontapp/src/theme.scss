@@ -1,0 +1,121 @@
+@import '../node_modules/@angular/material/theming';
+@include mat-core();
+
+$my-primary: (
+  50 : #ecf1e6,
+  100 : #d0dcc1,
+  200 : #b0c497,
+  300 : #90ac6d,
+  400 : #799b4e,
+  500 : #4f7623,
+  600 : #59812a,
+  700 : #4f7623,
+  800 : #456c1d,
+  900 : #335912,
+  A100 : #c1ff91,
+  A200 : #a4ff5e,
+  A400 : #86ff2b,
+  A700 : #78ff12,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$my-accent: (
+  50 : #f0f8e6,
+  100 : #dbedc2,
+  200 : #c3e199,
+  300 : #aad470,
+  400 : #98cb51,
+  500 : #86c232,
+  600 : #7ebc2d,
+  700 : #73b426,
+  800 : #69ac1f,
+  900 : #569f13,
+  A100 : #e5ffd1,
+  A200 : #c9ff9e,
+  A400 : #acff6b,
+  A700 : #9eff52,
+  contrast: (
+    50 : #ffffff,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+@function my-mat-light-theme-foreground($color) {
+  @return (
+    base:              $color,
+    divider:           $black-12-opacity,
+    dividers:          $black-12-opacity,
+    disabled:          rgba($color, 0.38),
+    disabled-button:   rgba($color, 0.38),
+    disabled-text:     rgba($color, 0.38),
+    elevation:         rgba($color, 0.38),
+    hint-text:         rgba($color, 0.38),
+    secondary-text:    rgba($color, 0.54),
+    icon:              rgba($color, 0.54),
+    icons:             rgba($color, 0.54),
+    text:              $color,
+    slider-min:        rgba($color, 0.38),
+    slider-off:        rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38)
+  );
+};
+
+// You can put any color here. I've chosen mat-color($my-app-primary, 500)
+$foreground-color: my-mat-light-theme-foreground(mat-color($my-accent, 500));
+$background-color: #222629;
+.mat-toolbar.mat-primary {
+  background: #222629!important;
+}
+
+/* ======== Angular material custom themes ======== */
+$my-theme-primary: mat-palette($my-primary);
+$my-theme-accent: mat-palette($my-accent);
+//the third, for the warn color, is the predefined material red palette
+$my-theme-warn: mat-palette($mat-red);
+
+$theme: mat-dark-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+
+// Insert custom background color
+$background: map-get($theme, background);
+$background: map_merge($background, (background: $background-color));
+$theme: map_merge($theme, (background: $background));
+
+$theme: map_merge($theme, (foreground: $foreground-color));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+//@include angular-material-theme($theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Maven Pro'
+);
+
+@include angular-material-typography($custom-typography);

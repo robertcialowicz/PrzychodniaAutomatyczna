@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-title>
+    <span>2022-12-22 22:22:00.0</span> <span>Neurology</span>
+  </mat-card-title>
+  <mat-card-subtitle>ID: b86fcce7-b664-47bc-8c0e-692f7292832c</mat-card-subtitle>
+
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="patient-data">
+    <div class="section-title">Patient personal data</div>
+      <div>
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td>Aaaaa</td>
+          </tr>
+          <tr>
+            <td>Surname:</td>
+            <td>Bbbbb</td>
+          </tr>
+          <tr>
+            <td>Birthdate:</td>
+            <td>2020-02-30</td>
+          </tr>
+          <tr>
+            <td>Pesel:</td>
+            <td>1111111111</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="section-title">Course of visit</div>
+    <div class="visit-notes">
+      <mat-form-field appearance="outline">
+        <mat-label>Visit notes</mat-label>
+        <textarea type="text" matInput [(ngModel)]="notes" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
+      </mat-form-field>
+    </div>
+    <div class="medicaments">
+      <mat-form-field appearance="outline">
+        <mat-label>Medicaments</mat-label>
+        <textarea type="text" matInput [(ngModel)]="medicaments" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>

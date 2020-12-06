@@ -1,0 +1,106 @@
+<div class="mat-elevation-z8">
+  <mat-card>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <mat-form-field class="form-element" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username">
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+        <div *ngIf="submitted && registerForm.controls.username.errors" class="invalid-feedback">
+          <div *ngIf="registerForm.controls.username.errors.required">Username is required</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <mat-form-field class="form-element" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password">
+          <mat-icon matPrefix>lock_open</mat-icon>
+        </mat-form-field>
+        <div *ngIf="submitted && registerForm.controls.password.errors" class="invalid-feedback">
+          <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="form-element" appearance="outline">
+          <mat-label>Email address</mat-label>
+          <input matInput formControlName="email">
+          <mat-icon matPrefix>alternate_email</mat-icon>
+        </mat-form-field>
+        <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-feedback">
+          <div *ngIf="registerForm.controls.email.errors.required">Email is required</div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="personal-info" formGroupName="doctorData">
+        <div class="form-group">
+          <mat-form-field class="form-element" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+<!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
+          </mat-form-field>
+          <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-feedback">
+            <div *ngIf="registerForm.controls.email.errors.required">Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field class="form-element" appearance="outline">
+            <mat-label>Surname</mat-label>
+            <input matInput formControlName="surname">
+<!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
+          </mat-form-field>
+          <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-feedback">
+            <div *ngIf="registerForm.controls.email.errors.required">Surname is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field class="form-element" appearance="outline">
+            <mat-label>Pesel</mat-label>
+            <input matInput formControlName="pesel">
+            <!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
+          </mat-form-field>
+          <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-feedback">
+            <div *ngIf="registerForm.controls.email.errors.required">Pesel is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field class="form-element" appearance="outline">
+            <mat-chip-list #chipList formArrayName="specialization">
+              <mat-chip *ngFor="let s of [1,2,3]; let i=index;"
+                        [selectable]="true"
+                        [removable]="true"
+                        (removed)="remove(i)">
+                {{ s }}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Specializations..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button mat-button color="accent" [disabled]="loading">Register</button>
+        <img *ngIf="loading" class="pl-2" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      </div>
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+
+
+
+    </form>
+  </mat-card>
+</div>
+

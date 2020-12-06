@@ -1,0 +1,29 @@
+<mat-card class="wrapper">
+  <div class="filters">
+      <form [formGroup]="periodForm">
+        <mat-form-field appearance="outline">
+          <mat-label>From date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="startDate" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>To date</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="endDate" />
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </form>
+  </div>
+  <mat-card-content>
+    <div *ngFor="let visit of plannedVisits" class="visit"
+          (click)="showVisitDetails(visit.id)">
+      <mat-card>
+        <mat-card-title>
+          {{ visit.date }}
+        </mat-card-title>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>
+

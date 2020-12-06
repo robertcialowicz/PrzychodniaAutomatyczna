@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 700px;
+  .mat-elevation-z8 {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+  span {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fc9003;
+    outline: none;
+  }
+}

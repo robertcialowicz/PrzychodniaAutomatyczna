@@ -1,0 +1,37 @@
+$orangeTransparent: rgba(232, 141, 37, 0.4);
+$orange: #f0b471;
+
+:host {
+  .wrapper {
+    width: 70%;
+  }
+
+  .filters form {
+    .mat-form-field {
+      width: 410px;
+    }
+
+    //width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .visit {
+    margin-bottom: 10px;
+    //width: 60%;
+    cursor: pointer;
+
+    .mat-card {
+      background-color: $orangeTransparent;
+    }
+
+    &:hover {
+      .mat-card {
+        background-color: $orange;
+        transition: background-color 0.5s ease;
+      }
+
+    }
+  }
+  width: 100%;
+  margin: 50px 50px
+}

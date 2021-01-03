@@ -8,7 +8,6 @@ services:
     ports: 
       - 8761:8761
 
-
   zuulgwsystem:
     image: zuulgwsystem
     build: ./api-gateway/
@@ -21,12 +20,30 @@ services:
       - "receiptssystem:receiptssystem"
       - "user-authentication-system:user-authentication-system"
 
+  prometheus:
+    image: prometheus
+    build: ./prometheus/
+    ports:
+      - 9090:9090
+    links:
+      - "visitsystem:visitsystem"
+      - "eurekasystem:eurekasystem"
+      - "reminderssystem:reminderssystem"
+      - "receiptssystem:receiptssystem"
+      - "user-authentication-system:user-authentication-system"
+      - "zuulgwsystem:zuulgwsystem"
 
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
 
 
   dbusers:
     image: dbusers
-    build: ./user-authentication-system/database
+    build: ./user-authentication-system/database/
     environment:
       MS_SQL_PASSWORD: "Password-123"
       ACCEPT_EULA: "Y"
@@ -48,11 +65,9 @@ services:
       - "eurekasystem:eurekasystem"
 
 
-
-
   dbreminders:
     image: dbreminders
-    build: ./VisitReminderSystem/database
+    build: ./VisitReminderSystem/database/
     environment:
       MS_SQL_PASSWORD: "Password-123"
       ACCEPT_EULA: "Y"
@@ -74,11 +89,9 @@ services:
       - "eurekasystem:eurekasystem"
 
 
-
-
   dbreceipts:
     image: dbreceipts
-    build: ./ReceiptGeneratorSystem/database
+    build: ./ReceiptGeneratorSystem/database/
     environment:
       MS_SQL_PASSWORD: "Password-123"
       ACCEPT_EULA: "Y"
@@ -100,11 +113,9 @@ services:
       - "eurekasystem:eurekasystem"
 
 
-
-
   dbvisits:
     image: dbvisits
-    build: ./BookVisitSystem/database
+    build: ./BookVisitSystem/database/
     environment:
       MS_SQL_PASSWORD: "Password-123"
       ACCEPT_EULA: "Y"

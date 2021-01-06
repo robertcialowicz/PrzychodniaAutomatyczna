@@ -28,3 +28,19 @@ body {
     background-color: orange;
   }
 }
+//.mat-form-field-empty.mat-form-field-label {
+//  color: green;
+//}
+//.mat-form-field-underline {
+//  background-color: green;
+//}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px #c1f1f5 inset !important;
+}
+
+

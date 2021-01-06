@@ -27,7 +27,7 @@ public class VisitService {
 
     public Visit addVisit(Visit visit){
         //stworz wizyte w bazie
-        Visit addedVisit = visitRepository.insertVisit(visit);
+        Visit addedVisit = visitRepository.save(visit);
 
         //wyslij POST do serwisu VisitReminderSystem
         RestTemplate restTemplate = new RestTemplate();
@@ -65,9 +65,13 @@ public class VisitService {
         return visitRepository.deleteVisitById(id);
     }
 
-    public Visit updateVisit(UUID id, Visit newVisit){
+    public Visit updateVisit(Visit newVisit){
         //zaktualizuj wizyte w bazie
-        Visit updatedVisit = visitRepository.updateVisitById(id, newVisit);
+        System.out.println(">>>>> " + newVisit);
+
+        Visit updatedVisit = visitRepository.update(newVisit);
+
+        System.out.println(">>>>> " + updatedVisit);
 
         //wyslij POST do serwisu ReceiptGeneratorSystem
         RestTemplate restTemplate = new RestTemplate();

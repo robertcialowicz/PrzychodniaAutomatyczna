@@ -5,19 +5,39 @@
         <ng-template matStepLabel>Select specialization</ng-template>
         <mat-form-field>
           <mat-label>Specialization</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required />
+          <mat-select formControlName="firstCtrl" required>
+            <mat-option *ngFor="let s of specializations" [value]="s.id">
+              {{s.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext (click)="getDoctorsBySpecialization()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="doctrorFormGroup">
+      <form [formGroup]="doctrorFormGroup">
+        <ng-template matStepLabel>Select doctor</ng-template>
+        <mat-form-field>
+          <mat-label>Specialization</mat-label>
+          <mat-select formControlName="doctorCtrl" required>
+            <mat-option *ngFor="let d of doctors" [value]="d.id">
+              Doctor {{d.name}} {{d.surname}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
+
+    <mat-step [stepControl]="periodForm">
+      <form [formGroup]="periodForm">
         <ng-template matStepLabel>Select date</ng-template>
         <div class="filters">
-          <form [formGroup]="periodForm">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="visit-time">
               <mat-label>From date</mat-label>
               <input matInput [matDatepicker]="picker" formControlName="startDate" />
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -29,23 +49,41 @@
               <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
-          </form>
-
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext (click)="getPossibleVisits()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Choose from possible visits</ng-template>
+        <div class="filters">
           <mat-form-field>
-            <mat-label>Selected time</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required />
+            <mat-label>Dates</mat-label>
+            <mat-select formControlName="thirdCtrl" required>
+              <mat-option *ngFor="let v of posssibleVisits" [value]="v.date">
+                {{v.date}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext (click)="reserveVisit()">Reserve</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+      <div class="reservation-request-info" *ngIf="reservationSucceed">
+        <div>Your visit has been successfully reserved.</div>
+        <div>Visit date: {{visitDetails.date}} <button mat-button routerLink="/patients/planned-visits">My planned visits</button></div>
+      </div>
+      <div class="reservation-request-info" *ngIf="!reservationSucceed">
+        <div>Sorry, an error occurred during reservation. Please try again.</div>
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>

@@ -21,5 +21,7 @@ public class DoctorSpecialization {
     @JoinColumn(name = "doctor_id", referencedColumnName = "id")
     private Doctor doctor;
 
-    private int specializationId;
+    @OneToOne
+    @JoinColumn(name = "specialization_id", referencedColumnName = "id")
+    private Specialization specialization;
 }

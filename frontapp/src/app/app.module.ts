@@ -15,16 +15,21 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatChipsModule} from '@angular/material/chips';
 import { RegisterPatientComponent } from './register-patient/register-patient.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AuthorizeComponent } from './authorize/authorize.component';
+import {JWT_OPTIONS, JwtHelperService} from "@auth0/angular-jwt";
+import {AuthenticationInterceptor} from "./services/authentication.interceptor";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     RegisterDoctorComponent,
-    RegisterPatientComponent
+    RegisterPatientComponent,
+    AuthorizeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,13 +41,18 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     MatDividerModule,
     MatChipsModule,
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true },
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

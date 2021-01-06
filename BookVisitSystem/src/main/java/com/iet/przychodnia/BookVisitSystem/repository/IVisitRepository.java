@@ -7,20 +7,15 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface IVisitRepository {
-    Visit insertVisit(UUID id, Visit visit);
+    Visit save(Visit visit);
 
-    default Visit insertVisit(Visit visit){
-        UUID id = UUID.randomUUID();
-        return insertVisit(id, visit);
-    }
+    Visit update(Visit visit);
 
     List<Visit> selectAllVisits();
 
     Optional<Visit> selectVisitById(UUID id);
 
     int deleteVisitById(UUID id);
-
-    Visit updateVisitById(UUID id, Visit visit);
 
     List<Visit> searchForVisitsInGivenPeriod(String fromDate, String toDate);
 

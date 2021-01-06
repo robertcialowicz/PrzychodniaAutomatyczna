@@ -17,7 +17,7 @@ public class Visit {
     private final UUID doctorID;
     private final UUID patientID;
     private final UUID specializationID;
-    private final UUID mediacalsID;
+    private final UUID medicalsID;
 
     public Visit(){
         this.id = null;
@@ -26,7 +26,7 @@ public class Visit {
         this.doctorID = null;
         this.patientID = null;
         this.specializationID = null;
-        this. mediacalsID = null;
+        this. medicalsID = null;
     }
 
     public Visit(@JsonProperty("id") UUID id,
@@ -42,7 +42,7 @@ public class Visit {
         this.doctorID = doctorID;
         this.patientID = patientID;
         this.specializationID = specializationID;
-        this. mediacalsID = mediacalsID;
+        this. medicalsID = mediacalsID;
     }
 
     public UUID getId() {
@@ -70,7 +70,7 @@ public class Visit {
     }
 
     public UUID getMediacalsID() {
-        return mediacalsID;
+        return medicalsID;
     }
 
     @Override
@@ -82,7 +82,7 @@ public class Visit {
                 ", doctorID=" + doctorID +
                 ", patientID=" + patientID +
                 ", specializationID=" + specializationID +
-                ", mediacalsID=" + mediacalsID +
+                ", mediacalsID=" + medicalsID +
                 '}';
     }
 }

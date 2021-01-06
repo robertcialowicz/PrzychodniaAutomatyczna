@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {RegisterDoctorComponent} from './register-doctor/register-doctor.component';
 import {RegisterPatientComponent} from './register-patient/register-patient.component';
-
+import {AuthorizeComponent} from "./authorize/authorize.component";
 const routes: Routes = [
   {
     path: 'doctors',
@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'register-patient',
     component: RegisterPatientComponent
+  },
+  {
+      path: 'authorize',
+      component: AuthorizeComponent
   }
 ];
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ApiService} from "../services/api.service";
+import {TokenService} from "../services/token.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-patient',
@@ -11,7 +14,11 @@ export class RegisterPatientComponent implements OnInit {
   submitted = false;
   error = '';
   loading = false;
-  constructor(private formBuilder: FormBuilder) {
+  success = false;
+
+  constructor(private formBuilder: FormBuilder,
+              private apiService: ApiService,
+              public router: Router) {
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -30,6 +37,19 @@ export class RegisterPatientComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.submitted = true;
+
+    if (this.registerForm.valid) {
+      this.apiService.register(this.registerForm.value).subscribe((res:any)  => {
+        this.success = true
+        console.log(res)
+      });
+    }
   }
+
+  redirectToLoginPage() {
+    this.router.navigate(['/authorize'])
+  }
+
 
 }

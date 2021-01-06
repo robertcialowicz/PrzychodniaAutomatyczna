@@ -14,20 +14,32 @@ import java.util.UUID;
 public class VisitRepositoryAccessFromDB implements IVisitRepository {
 
     private final JdbcTemplate jdbcTemplate;
+
     @Autowired
-    public VisitRepositoryAccessFromDB(JdbcTemplate jdbcTemplate){
+    public VisitRepositoryAccessFromDB(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    public Visit insertVisit(UUID id, Visit visit) {
+    public Visit save(Visit visit) {
         try {
             final String sql = "INSERT INTO Visits (id, date, doctorID, patientID, specializationID) VALUES (?, ?, ?, ?, ?)";
-            Visit visitToUpload = new Visit(id, visit.getDatetime(), null, visit.getDoctorID(), visit.getPatientID(), visit.getSpecializationID(), null);
-            jdbcTemplate.update(sql, visitToUpload.getId(), visitToUpload.getDatetime(), visitToUpload.getDoctorID(), visitToUpload.getPatientID(), visitToUpload.getSpecializationID());
-            return visitToUpload;
-        }catch(Exception e) {
-            e.getMessage();
+            jdbcTemplate.update(sql, visit.getId(), visit.getDatetime(), visit.getDoctorID(), visit.getPatientID(), visit.getSpecializationID());
+            return visit;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public Visit update(Visit visit) {
+        try {
+            final String sql = "UPDATE Visits SET notes=?, medicalsID=? WHERE id=?";
+            jdbcTemplate.update(sql, visit.getNotes(), visit.getMediacalsID(), visit.getId());
+            return visit;
+        } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -74,24 +86,11 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
     public int deleteVisitById(UUID id) {
         try {
             final String sql = "DELETE FROM Visits WHERE id=?";
-            jdbcTemplate.update(sql,id);
+            jdbcTemplate.update(sql, id);
             return 0;
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.getMessage();
             return 1;
-        }
-    }
-
-    @Override
-    public Visit updateVisitById(UUID id, Visit visit) {
-        try {
-            final String sql = "UPDATE Visits SET notes=?, medicalsID=? WHERE id=?";
-            Visit visitToUpload = new Visit(id, visit.getDatetime(), visit.getNotes(), visit.getDoctorID(), visit.getPatientID(), visit.getSpecializationID(), visit.getMediacalsID());
-            jdbcTemplate.update(sql, visitToUpload.getNotes(), visitToUpload.getMediacalsID(), id);
-            return selectVisitById(id).orElse(null);
-        }catch(Exception e) {
-            e.getMessage();
-            return null;
         }
     }
 
@@ -111,12 +110,12 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
                     UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
                             UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
                     return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
-        });
+                });
         return visits;
     }
 
     @Override
-    public List<Visit> searchForVisitsInGivenPeriodForPatient(String fromDate, String toDate, UUID patientId){
+    public List<Visit> searchForVisitsInGivenPeriodForPatient(String fromDate, String toDate, UUID patientId) {
         final String sql = "SELECT id, date, notes, doctorID, patientID, specializationID, medicalsID FROM Visits WHERE (date BETWEEN ? AND ?) AND patientID=? ";
         List<Visit> visits = jdbcTemplate.query(
                 sql,
@@ -137,7 +136,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
     }
 
     @Override
-    public List<Visit> searchForVisitsInGivenPeriodForDoctor(String fromDate, String toDate, UUID doctorId){
+    public List<Visit> searchForVisitsInGivenPeriodForDoctor(String fromDate, String toDate, UUID doctorId) {
         final String sql = "SELECT id, date, notes, doctorID, patientID, specializationID, medicalsID FROM Visits WHERE (date BETWEEN ? AND ?) AND doctorId=? ";
         List<Visit> visits = jdbcTemplate.query(
                 sql,
@@ -158,7 +157,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
     }
 
     @Override
-    public List<Visit> searchForVisitsInGivenPeriodBySpecialization(String fromDate, String toDate, UUID specializationId){
+    public List<Visit> searchForVisitsInGivenPeriodBySpecialization(String fromDate, String toDate, UUID specializationId) {
         final String sql = "SELECT id, date, notes, doctorID, patientID, specializationID, medicalsID FROM Visits WHERE (date BETWEEN ? AND ?) AND specializationId=? ";
         List<Visit> visits = jdbcTemplate.query(
                 sql,

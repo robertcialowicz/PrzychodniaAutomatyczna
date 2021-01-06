@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <mat-card *ngFor="let v of visits">
+    <table>
+      <tr>
+        <td>{{v.date}}</td>
+        <td class="planned-visit-specialization">{{v.specializationName}}</td>
+        <td>Doctor {{v.doctorName}} {{v.doctorSurname}}</td>
+        <td><button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+          <mat-icon (click)="cancelVisit(v.id)">cancel</mat-icon>
+        </button></td>
+      </tr>
+    </table>
+  </mat-card>
+</div>

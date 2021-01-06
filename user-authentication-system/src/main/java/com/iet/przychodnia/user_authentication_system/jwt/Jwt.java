@@ -4,22 +4,21 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.iet.przychodnia.user_authentication_system.authorization.AuthorizationRole;
+import com.iet.przychodnia.user_authentication_system.config.AccountDetails;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.time.Instant;
-import java.util.Base64;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static lombok.AccessLevel.PRIVATE;
+
 
 @Value
 @AllArgsConstructor(access = PRIVATE)
@@ -31,19 +30,19 @@ public class Jwt {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    String subject;
+    UUID subject;
     Instant issuedAt;
     Instant expiresAt;
 
     @Singular
-    List<String> roles;
+    List<AuthorizationRole> roles;
 
-    public static Jwt fromUserDetails(UserDetails user) {
+    public static Jwt fromUserDetails(AccountDetails account) {
         return Jwt.builder()
-                .subject(user.getUsername())
+                .subject(account.getUserId())
                 .issuedAt(Instant.now())
                 .expiresAt(Instant.now().plusSeconds(DEFAULT_VALIDITY))
-                .roles(user.getAuthorities().stream().map(Object::toString).collect(Collectors.toList()))
+                .roles(account.getRoles())
                 .build();
     }
 
@@ -78,11 +77,17 @@ public class Jwt {
             val payload = JWT.decode(encodedJwt).getPayload();
             val jsonPayload = Base64.getDecoder().decode(payload);
             val node = objectMapper.readValue(jsonPayload, JwtPayload.class);
+            val roles = node.getRoles()
+                    .stream()
+                    .map(String::toUpperCase)
+                    .map(AuthorizationRole::valueOf)
+                    .collect(Collectors.toList());
 
             return Optional.of(new Jwt(node.getSub(),
-                                       Instant.ofEpochSecond(node.getIat()),
-                                       Instant.ofEpochSecond(node.getExp()),
-                                       node.getRoles()));
+                    Instant.ofEpochSecond(node.getIat()),
+                    Instant.ofEpochSecond(node.getExp()),
+                    roles));
+
         } catch (Exception e) {
             log.error("An error occurred when decoding jwt: ", e);
 
@@ -95,15 +100,20 @@ public class Jwt {
     }
 
     public String sign(Algorithm algorithm) {
+        val stringRoles = roles.stream()
+                .map(AuthorizationRole::toString)
+                .map(String::toLowerCase)
+                .toArray(String[]::new);
+
         return JWT.create()
-                  .withClaim("sub", subject)
-                  .withClaim("iat", Date.from(issuedAt))
-                  .withClaim("exp", Date.from(expiresAt))
-                  .withArrayClaim("roles", roles.toArray(String[]::new))
-                  .sign(algorithm);
+                .withClaim("sub", subject.toString())
+                .withClaim("iat", Date.from(issuedAt))
+                .withClaim("exp", Date.from(expiresAt))
+                .withArrayClaim("roles", stringRoles)
+                .sign(algorithm);
     }
 
-    public boolean hasRole(String role) {
+    public boolean hasRole(AuthorizationRole role) {
         return roles.contains(role);
     }
 
@@ -116,7 +126,7 @@ public class Jwt {
     @AllArgsConstructor
     private static class JwtPayload {
 
-        private String sub;
+        private UUID sub;
         private long iat;
         private long exp;
         private List<String> roles;

@@ -28,4 +28,11 @@ public class ReceiptService {
         return receiptRepository.getReceiptsForPatient(patientId);
     }
 
+    public List<Receipt> getReceiptsForVisit(UUID visitId){
+        return receiptRepository.getReceiptsForVisit(visitId);
+    }
+
+    public List<Receipt> getReceiptsForPatientForVisit(UUID patientId, UUID visitId){
+        return receiptRepository.getReceiptsForPatientForVisit(patientId, visitId);
+    }
 }

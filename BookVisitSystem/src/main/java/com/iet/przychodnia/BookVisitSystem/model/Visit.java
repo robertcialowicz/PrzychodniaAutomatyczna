@@ -2,9 +2,7 @@ package com.iet.przychodnia.BookVisitSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,7 +15,7 @@ public class Visit {
     private final UUID doctorID;
     private final UUID patientID;
     private final UUID specializationID;
-    private final UUID mediacalsID;
+    private final String medicalsID;
 
     public Visit(){
         this.id = null;
@@ -26,7 +24,7 @@ public class Visit {
         this.doctorID = null;
         this.patientID = null;
         this.specializationID = null;
-        this. mediacalsID = null;
+        this.medicalsID = null;
     }
 
     public Visit(@JsonProperty("id") UUID id,
@@ -35,14 +33,14 @@ public class Visit {
                  @JsonProperty("doctorID") UUID doctorID,
                  @JsonProperty("patientID") UUID patientID,
                  @JsonProperty("specializationID") UUID specializationID,
-                 @JsonProperty("medicalsID") UUID mediacalsID) {
+                 @JsonProperty("medicalsID") String medicalsID) {
         this.id = id;
         this.datetime = datetime;
         this.notes = notes;
         this.doctorID = doctorID;
         this.patientID = patientID;
         this.specializationID = specializationID;
-        this. mediacalsID = mediacalsID;
+        this.medicalsID = medicalsID;
     }
 
     public UUID getId() {
@@ -69,8 +67,8 @@ public class Visit {
         return specializationID;
     }
 
-    public UUID getMediacalsID() {
-        return mediacalsID;
+    public String getMedicalsID() {
+        return medicalsID;
     }
 
     @Override
@@ -82,7 +80,7 @@ public class Visit {
                 ", doctorID=" + doctorID +
                 ", patientID=" + patientID +
                 ", specializationID=" + specializationID +
-                ", mediacalsID=" + mediacalsID +
+                ", medicalsID=" + medicalsID +
                 '}';
     }
 }

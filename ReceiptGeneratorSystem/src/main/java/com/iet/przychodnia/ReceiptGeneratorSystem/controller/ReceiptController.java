@@ -30,4 +30,14 @@ public class ReceiptController {
         return receiptService.getReceiptsForPatient(patientId);
     }
 
+    @GetMapping(path = "/patient/{patientid}/visit/{visitid}")
+    public List<Receipt> generateReceiptForGivenPatientForGivenVisit (@PathVariable("patientid") UUID patientId, @PathVariable("visitid") UUID visitId){
+        return receiptService.getReceiptsForPatientForVisit(patientId, visitId);
+    }
+
+    @GetMapping(path = "/visit/{id}")
+    public List<Receipt> generateReceiptForGivenVisit(@PathVariable("id") UUID visitId){
+        return receiptService.getReceiptsForVisit(visitId);
+    }
+
 }

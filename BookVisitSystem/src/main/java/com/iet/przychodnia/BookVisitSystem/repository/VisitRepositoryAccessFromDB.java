@@ -1,11 +1,11 @@
 package com.iet.przychodnia.BookVisitSystem.repository;
 
 import com.iet.przychodnia.BookVisitSystem.model.Visit;
+import com.iet.przychodnia.BookVisitSystem.service.ExtractMedsAsList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -42,8 +42,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
             UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
             UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
             UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
-            UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
-                    UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+            String medicalsID = resultSet.getString("medicalsID");
             return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
         });
         return visits;
@@ -62,8 +61,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
                     UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
                     UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
                     UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
-                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
-                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    String medicalsID = resultSet.getString("medicalsID");
                     return new Visit(visitID, date, notes, doctorID, patientID, specializationID, medicalsID);
                 });
 
@@ -86,8 +84,8 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
     public Visit updateVisitById(UUID id, Visit visit) {
         try {
             final String sql = "UPDATE Visits SET notes=?, medicalsID=? WHERE id=?";
-            Visit visitToUpload = new Visit(id, visit.getDatetime(), visit.getNotes(), visit.getDoctorID(), visit.getPatientID(), visit.getSpecializationID(), visit.getMediacalsID());
-            jdbcTemplate.update(sql, visitToUpload.getNotes(), visitToUpload.getMediacalsID(), id);
+            Visit visitToUpload = new Visit(id, visit.getDatetime(), visit.getNotes(), visit.getDoctorID(), visit.getPatientID(), visit.getSpecializationID(), visit.getMedicalsID());
+            jdbcTemplate.update(sql, visitToUpload.getNotes(), visitToUpload.getMedicalsID(), id);
             return selectVisitById(id).orElse(null);
         }catch(Exception e) {
             e.getMessage();
@@ -108,8 +106,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
                     UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
                     UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
                     UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
-                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
-                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    String medicalsID = resultSet.getString("medicalsID");
                     return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
         });
         return visits;
@@ -128,8 +125,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
                     UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
                     UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
                     UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
-                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
-                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    String medicalsID = resultSet.getString("medicalsID");
                     return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
                 });
 
@@ -149,8 +145,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
                     UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
                     UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
                     UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
-                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
-                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    String medicalsID = resultSet.getString("medicalsID");
                     return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
                 });
 
@@ -170,8 +165,7 @@ public class VisitRepositoryAccessFromDB implements IVisitRepository {
                     UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
                     UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
                     UUID specializationID = UUID.fromString(resultSet.getString("specializationID").trim());
-                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
-                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    String medicalsID = resultSet.getString("medicalsID");
                     return new Visit(id, date, notes, doctorID, patientID, specializationID, medicalsID);
                 });
         return visits;

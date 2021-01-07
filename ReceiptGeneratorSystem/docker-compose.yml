@@ -10,7 +10,7 @@ services:
     volumes:
       - ./database/dbMedicalsVol:/var/opt/mssql/data
     ports:
-      - 1435:1433
+      - 1437:1433
 
   receiptssystem:
     image: receiptssystem

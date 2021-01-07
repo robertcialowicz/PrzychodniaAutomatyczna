@@ -43,7 +43,7 @@ public class VisitService {
             //release
             restTemplate.postForEntity("http://reminderssystem:9095/api/reminder", request, Void.class);
             //debug
-            //restTemplate.postForEntity("http://localhost:8082/api/reminder", request, Void.class);
+            //restTemplate.postForEntity("http://localhost:9095/api/reminder", request, Void.class);
         } catch (Exception e){
             e.getMessage();
         }
@@ -69,23 +69,26 @@ public class VisitService {
         //zaktualizuj wizyte w bazie
         Visit updatedVisit = visitRepository.updateVisitById(id, newVisit);
 
-        //wyslij POST do serwisu ReceiptGeneratorSystem
-        RestTemplate restTemplate = new RestTemplate();
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        JSONObject visitObjectJSON = new JSONObject();
-        visitObjectJSON.put("patientId", updatedVisit.getPatientID().toString());
-        visitObjectJSON.put("doctorId", updatedVisit.getDoctorID().toString());
-        visitObjectJSON.put("medicalsId", updatedVisit.getMediacalsID().toString());
-        HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
-        try{
-            //release
-            restTemplate.postForEntity("http://receiptssystem:9096/api/receipt", request, Void.class);
-            //debug
-            //restTemplate.postForEntity("http://localhost:8081/api/receipt", request, Void.class);
-        } catch (Exception e){
-            e.getMessage();
+        for (UUID uuid : ExtractMedsAsList.ExtractMedsAsListFromString(newVisit.getMedicalsID())){
+            //wyslij POST do serwisu ReceiptGeneratorSystem
+            RestTemplate restTemplate = new RestTemplate();
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            JSONObject visitObjectJSON = new JSONObject();
+            visitObjectJSON.put("patientId", updatedVisit.getPatientID().toString());
+            visitObjectJSON.put("visitId", updatedVisit.getId().toString());
+            visitObjectJSON.put("medicalsId", uuid.toString());
+            HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
+            try{
+                //release
+                restTemplate.postForEntity("http://receiptssystem:9096/api/receipt", request, Void.class);
+                //debug
+                //restTemplate.postForEntity("http://localhost:9096/api/receipt", request, Void.class);
+            } catch (Exception e){
+                e.getMessage();
+            }
         }
+
         //TODO ewentualnie zaktualizować adres seriwsu
 
         return updatedVisit;

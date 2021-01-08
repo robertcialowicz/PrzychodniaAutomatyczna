@@ -22,9 +22,9 @@ public class ReceiptRepositoryFromDB implements IReceiptRepository {
     @Override
     public Receipt insertReceipt(UUID id, Receipt receipt) {
         try {
-            final String sql = "INSERT INTO Receipts (id, patientID, doctorID, medicalsID) VALUES (?, ?, ?, ?)";
-            Receipt receiptToUpload = new Receipt(id, receipt.getPatientId(), receipt.getDoctorId(), receipt.getMedicalIds());
-            jdbcTemplate.update(sql, receiptToUpload.getId(), receiptToUpload.getPatientId(), receiptToUpload.getDoctorId(), receiptToUpload.getMedicalIds());
+            final String sql = "INSERT INTO Receipts (id, patientID, visitID, medicalsID) VALUES (?, ?, ?, ?)";
+            Receipt receiptToUpload = new Receipt(id, receipt.getPatientId(), receipt.getVisitId(), receipt.getMedicalIds());
+            jdbcTemplate.update(sql, receiptToUpload.getId(), receiptToUpload.getPatientId(), receiptToUpload.getVisitId(), receiptToUpload.getMedicalIds());
             return receiptToUpload;
         }catch(Exception e) {
             e.getMessage();
@@ -34,17 +34,51 @@ public class ReceiptRepositoryFromDB implements IReceiptRepository {
 
     @Override
     public List<Receipt> getReceiptsForPatient(UUID patientId) {
-        final String sql = "SELECT id, patientID, doctorID, medicalsID FROM Receipts WHERE patientID=?";
+        final String sql = "SELECT id, patientID, visitId, medicalsID FROM Receipts WHERE patientID=?";
         List<Receipt> receipts = jdbcTemplate.query(
                 sql,
                 new Object[]{patientId.toString()},
                 (resultSet, i) -> {
                     UUID id = UUID.fromString(resultSet.getString("id").trim());
-                    UUID doctorID = UUID.fromString(resultSet.getString("doctorID").trim());
+                    UUID visitID = UUID.fromString(resultSet.getString("visitID").trim());
                     UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
                     UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
                             UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
-                    return new Receipt(id, patientID, doctorID, medicalsID);
+                    return new Receipt(id, patientID, visitID, medicalsID);
+                });
+        return receipts;
+    }
+
+    @Override
+    public List<Receipt> getReceiptsForVisit(UUID visitid) {
+        final String sql = "SELECT id, patientID, visitId, medicalsID FROM Receipts WHERE visitID=?";
+        List<Receipt> receipts = jdbcTemplate.query(
+                sql,
+                new Object[]{visitid.toString()},
+                (resultSet, i) -> {
+                    UUID id = UUID.fromString(resultSet.getString("id").trim());
+                    UUID visitID = UUID.fromString(resultSet.getString("visitID").trim());
+                    UUID patientID = UUID.fromString(resultSet.getString("patientID").trim());
+                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
+                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    return new Receipt(id, patientID, visitID, medicalsID);
+                });
+        return receipts;
+    }
+
+    @Override
+    public List<Receipt> getReceiptsForPatientForVisit(UUID patientID, UUID visitID) {
+        final String sql = "SELECT id, patientID, visitId, medicalsID FROM Receipts WHERE (patientID=? AND visitId=?)";
+        List<Receipt> receipts = jdbcTemplate.query(
+                sql,
+                new Object[]{patientID.toString(), visitID.toString()},
+                (resultSet, i) -> {
+                    UUID id = UUID.fromString(resultSet.getString("id").trim());
+                    UUID visitid = UUID.fromString(resultSet.getString("visitID").trim());
+                    UUID patientid = UUID.fromString(resultSet.getString("patientID").trim());
+                    UUID medicalsID = (resultSet.getString("medicalsID") != null) ?
+                            UUID.fromString(resultSet.getString("medicalsID").trim()) : null;
+                    return new Receipt(id, visitid, patientid, medicalsID);
                 });
         return receipts;
     }

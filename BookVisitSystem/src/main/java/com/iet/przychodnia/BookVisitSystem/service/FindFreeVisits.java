@@ -2,12 +2,9 @@ package com.iet.przychodnia.BookVisitSystem.service;
 
 import com.iet.przychodnia.BookVisitSystem.model.Visit;
 
-import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

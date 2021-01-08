@@ -14,24 +14,24 @@ public class Receipt {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private final UUID id;
     private final UUID patientId;
-    private final UUID doctorId;
-    private final UUID medicalIds;
+    private final UUID visitId;
+    private final UUID medicalId;
 
     public Receipt() {
         this.id = null;
         this.patientId = null;
-        this.doctorId = null;
-        this.medicalIds = null;
+        this.visitId = null;
+        this.medicalId = null;
     }
 
     public Receipt(@JsonProperty("id") UUID id,
                    @JsonProperty("patientId") UUID patientId,
-                   @JsonProperty("doctorId") UUID doctorId,
-                   @JsonProperty("medicalsId") UUID medicalIds) {
+                   @JsonProperty("visitId") UUID visitId,
+                   @JsonProperty("medicalsId") UUID medicalId) {
         this.id = id;
         this.patientId = patientId;
-        this.doctorId = doctorId;
-        this.medicalIds = medicalIds;
+        this.visitId = visitId;
+        this.medicalId = medicalId;
     }
 
     @Override
@@ -39,8 +39,8 @@ public class Receipt {
         return "Receipt{" +
                 "id=" + id +
                 ", patientId=" + patientId +
-                ", doctorId=" + doctorId +
-                ", medicalIds=" + medicalIds +
+                ", visitId=" + visitId +
+                ", medicalId=" + medicalId +
                 '}';
     }
 
@@ -52,11 +52,11 @@ public class Receipt {
         return patientId;
     }
 
-    public UUID getDoctorId() {
-        return doctorId;
+    public UUID getVisitId() {
+        return visitId;
     }
 
     public UUID getMedicalIds() {
-        return medicalIds;
+        return medicalId;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="BranchesTreeState">
     <expand>
@@ -23,10 +23,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f83545ae-610e-4fd7-91cb-4eba894577df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/authorize/authorize.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/authorize/authorize.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/authorize/authorize.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/authorize/authorize.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/api.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/api.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/patient-portal.resolver.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/patient-portal.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/planned-visits/planned-visits.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/planned-visits/planned-visits.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/planned-visits/planned-visits.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/planned-visits/planned-visits.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/services/api.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/services/api.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/services/authentication.interceptor.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/services/authentication.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/services/token.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontapp/src/app/services/token.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/Globals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/authorization/AuthorizationRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/authorization/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/authorization/RoleAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/AccountDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/DoctorSpecializationsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/requests/SpecializationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/response/SpecializationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/exceptions/ForbiddenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/JwtValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/Specialization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/repository/RoleEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/repository/SpecializationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/service/SpecializationsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/dbVisits.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/dbVisits.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/dbVisits_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/dbVisits_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/master.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/mastlog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/model.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/modellog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/msdbdata.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/msdbdata.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb2.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb3.ndf" afterDir="false" />
@@ -36,12 +74,84 @@
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb7.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/tempdb8.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/database/dbVisitsVol/templog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/controller/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/controller/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/model/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/model/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/repository/IVisitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/repository/IVisitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/repository/VisitRepositoryAccessFromDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/repository/VisitRepositoryAccessFromDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/service/FindFreeVisits.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/service/FindFreeVisits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/service/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/java/com/iet/przychodnia/BookVisitSystem/service/VisitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookVisitSystem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../BookVisitSystem/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/dbReceipts.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/dbReceipts.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/dbReceipts_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/dbReceipts_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/master.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/mastlog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/model.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/modellog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/msdbdata.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/msdbdata.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/msdblog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb2.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb3.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb4.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb4.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb5.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb5.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb6.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb6.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb7.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/tempdb8.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../ReceiptGeneratorSystem/database/dbMedicalsVol/templog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/dbReminders.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/dbReminders.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/dbReminders_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/dbReminders_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/master.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/mastlog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/model.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/modellog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/msdbdata.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/msdbdata.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/msdblog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb2.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb3.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb4.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb4.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb5.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb5.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb6.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb6.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb7.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/tempdb8.ndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/../VisitReminderSystem/database/dbRemindersVol/templog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/iet/przychodnia/apigateway/jwt/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/iet/przychodnia/apigateway/jwt/JwtRequestFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/future-visits/future-visits.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/future-visits/future-visits.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/future-visits/future-visits.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/future-visits/future-visits.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/future-visits/future-visits.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/future-visits/future-visits.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/resolvers.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/resolvers.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/visit-details/visit-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/visit-details/visit-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/visit-details/visit-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/doctor-portal/visit-details/visit-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/patient-portal-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/patient-portal-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/patient-portal.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/patient-portal.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/reserve-visit/reserve-visit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/reserve-visit/reserve-visit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/reserve-visit/reserve-visit.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/reserve-visit/reserve-visit.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/reserve-visit/reserve-visit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/modules/patient-portal/reserve-visit/reserve-visit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/register-doctor/register-doctor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/register-doctor/register-doctor.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/register-doctor/register-doctor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/register-doctor/register-doctor.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/register-patient/register-patient.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/register-patient/register-patient.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/register-patient/register-patient.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/register-patient/register-patient.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/register-patient/register-patient.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/register-patient/register-patient.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/app/welcome/welcome.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/app/welcome/welcome.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontapp/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontapp/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/user-authentication-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/user-authentication-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/dbUsers.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/dbUsers.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/dbUsers_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/dbUsers_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/master.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/mastlog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/model.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/modellog.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/msdbdata.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/msdbdata.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dbUsersVol/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb2.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb2.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb3.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb3.ndf" afterDir="false" />
@@ -51,10 +161,17 @@
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb7.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb7.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/tempdb8.ndf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/tempdb8.ndf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbUsersVol/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbUsersVol/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/user-authentication-system-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config/JwtUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/requests/RegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/requests/RegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/response/AccountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/controller/response/AccountResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/Jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/Jwt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/JwtRequestFilter2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/jwt/JwtRequestFilter2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/DoctorSpecialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model/DoctorSpecialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +189,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1k0eFlbyvr6P8U1g1FwslPEbk7j" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -92,15 +202,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/api-gateway" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../api-gateway" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/repository" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/persistence/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system/config" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/user_authentication_system" />
       <recent name="$PROJECT_DIR$/src/main/java/com/iet/przychodnia/userauthenticationsystem" />
     </key>
   </component>
@@ -128,6 +242,7 @@
     <configuration name="database/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
+          <option name="imageTag" value="dbusers-latest" />
           <option name="buildCliOptions" value="" />
           <option name="command" value="" />
           <option name="containerName" value="dbUsers-latest" />
@@ -144,7 +259,6 @@
               </DockerEnvVarImpl>
             </list>
           </option>
-          <option name="imageTag" value="dbusers-latest" />
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
@@ -200,7 +314,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -215,116 +329,32 @@
       <workItem from="1605977550703" duration="77000" />
       <workItem from="1605979560658" duration="1022000" />
       <workItem from="1605983562378" duration="124000" />
+      <workItem from="1607720455550" duration="5332000" />
+      <workItem from="1607884072077" duration="15000" />
+      <workItem from="1607943971353" duration="7090000" />
+      <workItem from="1608468609005" duration="6173000" />
+      <workItem from="1609337775710" duration="691000" />
+      <workItem from="1609338606927" duration="1314000" />
+      <workItem from="1609364483385" duration="3027000" />
+      <workItem from="1609673275451" duration="1067000" />
+      <workItem from="1609683680444" duration="620000" />
+      <workItem from="1609968210148" duration="335000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="67" y="100" width="1084" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605962883053">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="67" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605962883053" />
-    <state x="67" y="101" width="1084" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605878615752" />
-    <state x="570" y="164" width="826" height="813" key="#com.intellij.ide.util.MemberChooser" timestamp="1605867470795">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="570" y="164" width="826" height="813" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1046@0.0.1920.1046" timestamp="1605867470795" />
-    <state x="1138" y="192" width="583" height="667" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1605878656363">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="1138" y="192" width="583" height="667" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605878656363" />
-    <state x="259" y="447" width="1401" height="157" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1604842036169">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="259" y="447" width="1401" height="157" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1604842036169" />
-    <state x="616" y="391" width="687" height="278" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605830336265">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="616" y="391" width="687" height="278" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1046@0.0.1920.1046" timestamp="1605830336265" />
-    <state x="632" y="99" width="646" height="854" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605552232467">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="632" y="99" width="646" height="854" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605552232467" />
-    <state x="591" y="364" width="727" height="323" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605547812469">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="591" y="364" width="727" height="323" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1046@0.0.1920.1046" timestamp="1605547812469" />
-    <state x="1218" y="281" width="424" height="490" key="FileChooserDialogImpl" timestamp="1605813129238">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="1218" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1605813129238" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605983685750">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685750" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630674" />
-    <state width="914" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598771" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605983685749">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685749" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630673" />
-    <state width="914" height="338" key="GridCell.Tab.0.center/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598770" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605983685749">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685749" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630673" />
-    <state width="914" height="338" key="GridCell.Tab.0.left/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598769" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605983685750">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605983685750" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605963630674" />
-    <state width="914" height="338" key="GridCell.Tab.0.right/0.0.1920.1046@0.0.1920.1046" timestamp="1605878598771" />
-    <state x="493" y="181" width="924" height="690" key="Maven.ArtifactSearchDialog" timestamp="1605369043414">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="493" y="181" width="924" height="690" key="Maven.ArtifactSearchDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1605369043414" />
-    <state x="-1802" y="31" width="1735" height="1009" key="SettingsEditor" timestamp="1605977587554">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1802" y="31" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1605977587554" />
-    <state x="118" y="36" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605962512797" />
-    <state x="118" y="37" width="1735" height="1009" key="SettingsEditor/0.0.1920.1046@0.0.1920.1046" timestamp="1605651589830" />
-    <state width="539" height="446" key="SwitcherDM" timestamp="1605867713087">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state width="539" height="446" key="SwitcherDM/0.0.1920.1046@0.0.1920.1046" timestamp="1605867713087" />
-    <state x="443" y="344" width="545" height="189" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1605637913869">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="443" y="344" width="545" height="189" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1920.1046@0.0.1920.1046" timestamp="1605637913869" />
-    <state x="443" y="344" width="744" height="189" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize" timestamp="1605637981021">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="443" y="344" width="744" height="189" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/0.0.1920.1046@0.0.1920.1046" timestamp="1605637981021" />
-    <state x="408" y="67" width="1308" height="849" key="find.popup" timestamp="1605864982642">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="408" y="67" width="1308" height="849" key="find.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1605864982642" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1605864129565">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="624" y="237" key="run.anything.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1605864129565" />
-    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1605878532635">
-      <screen x="0" y="0" width="1920" height="1046" />
-    </state>
-    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1605878532635" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

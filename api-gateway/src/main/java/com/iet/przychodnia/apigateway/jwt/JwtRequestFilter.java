@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.Instant;
+import java.util.Enumeration;
 
 @Component
 @Slf4j
@@ -45,7 +46,20 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     }
 
     public void attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
+        Enumeration<String> headerNames = request.getHeaderNames();
+        System.out.println("Request: " + request.getMethod());
+        System.out.println("Printing header names>>>>>>>>>>>>>>>>>>>>>>>>>");
+        if (headerNames != null) {
+            while (headerNames.hasMoreElements()) {
+                val name = headerNames.nextElement();
+                System.out.println("Header: " + name + " = " + request.getHeader(name));
+            }
+        }
         val authorizationHeader = request.getHeader(AUTHORIZATION_HEADER);
+
+        if (request.getMethod().equalsIgnoreCase("OPTIONS")) {
+            return;
+        }
 
         if (authorizationHeader == null) {
             log.warn("No `Authorization` header specified");

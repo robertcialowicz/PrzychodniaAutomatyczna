@@ -52,6 +52,6 @@ public class AccountResponse {
         String name;
         String surname;
         String pesel;
-        List<Integer> specialization;
+        List<UUID> specialization;
     }
 }

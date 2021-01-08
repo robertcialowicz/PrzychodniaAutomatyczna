@@ -42,7 +42,6 @@ export class FutureVisitsComponent implements OnInit {
 
   ngOnInit(): void {
     this.plannedVisits = this.route.snapshot.data['plannedVisits'];
-    console.log(this.plannedVisits)
   }
 
   showVisitDetails(visitId: any): void {

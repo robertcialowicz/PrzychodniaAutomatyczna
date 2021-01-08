@@ -6,7 +6,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -28,4 +31,16 @@ public class Account {
     private String email;
 
     private boolean isDoctor;
+
+    @OneToMany(mappedBy = "account")
+    private List<Role> roles;
+
+    public Account(UUID id, @NotBlank String username, @NotBlank String password, @NotBlank String email, boolean isDoctor) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.isDoctor = isDoctor;
+        this.roles = Collections.emptyList();
+    }
 }

@@ -1,8 +1,8 @@
 <mat-card>
   <mat-card-title>
-    <span>2022-12-22 22:22:00.0</span> <span>Neurology</span>
+    <span>{{visit.date}}</span> <span>{{visit.specialization}}</span>
   </mat-card-title>
-  <mat-card-subtitle>ID: b86fcce7-b664-47bc-8c0e-692f7292832c</mat-card-subtitle>
+  <mat-card-subtitle>ID: {{visit.id}}</mat-card-subtitle>
 
   <mat-divider></mat-divider>
   <mat-card-content>
@@ -12,19 +12,19 @@
         <table>
           <tr>
             <td>Name:</td>
-            <td>Aaaaa</td>
+            <td>{{visit.patientData.name}}</td>
           </tr>
           <tr>
             <td>Surname:</td>
-            <td>Bbbbb</td>
+            <td>{{visit.patientData.surname}}</td>
           </tr>
           <tr>
             <td>Birthdate:</td>
-            <td>2020-02-30</td>
+            <td>{{visit.patientData.birthDate}}</td>
           </tr>
           <tr>
             <td>Pesel:</td>
-            <td>1111111111</td>
+            <td>{{visit.patientData.pesel}}</td>
           </tr>
         </table>
       </div>
@@ -33,13 +33,13 @@
     <div class="visit-notes">
       <mat-form-field appearance="outline">
         <mat-label>Visit notes</mat-label>
-        <textarea type="text" matInput [(ngModel)]="notes" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
+        <textarea type="text" matInput [(ngModel)]="notes" (ngModelChange)="updateVisitDetails()"  matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
       </mat-form-field>
     </div>
     <div class="medicaments">
       <mat-form-field appearance="outline">
         <mat-label>Medicaments</mat-label>
-        <textarea type="text" matInput [(ngModel)]="medicaments" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
+        <textarea type="text" matInput [(ngModel)]="medicaments" (ngModelChange)="updateVisitDetails()" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
       </mat-form-field>
     </div>
   </mat-card-content>

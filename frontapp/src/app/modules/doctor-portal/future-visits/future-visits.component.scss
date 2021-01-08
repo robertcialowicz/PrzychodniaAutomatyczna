@@ -22,6 +22,10 @@ $orange: #f0b471;
 
     .mat-card {
       background-color: $orangeTransparent;
+
+      table {
+        width: 100%;
+      }
     }
 
     &:hover {

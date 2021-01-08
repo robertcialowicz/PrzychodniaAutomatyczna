@@ -4,6 +4,7 @@ import lombok.Value;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @Getter - gettery
@@ -46,6 +47,6 @@ public class RegistrationRequest {
         String name;
         String surname;
         String pesel;
-        List<Integer> specialization;
+        List<UUID> specialization;
     }
 }

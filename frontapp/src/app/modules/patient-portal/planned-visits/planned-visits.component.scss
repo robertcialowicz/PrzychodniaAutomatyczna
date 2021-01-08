@@ -1,0 +1,25 @@
+:host {
+  width: 100%;
+
+  .wrapper {
+    margin: 50px;
+  }
+
+  .mat-card {
+    margin-bottom: 20px;
+    width: 700px;
+
+    table {
+      width: 100%;
+    }
+
+    .mat-icon-button.mat-warn {
+      color: orange;
+    }
+    .planned-visit-specialization {
+      color: orange;
+    }
+  }
+
+}
+

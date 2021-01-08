@@ -1,9 +1,9 @@
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" *ngIf="!success">
   <mat-card>
 
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <mat-form-field class="form-element" appearance="outline">
+        <mat-form-field class="form-element" appearance="fill">
           <mat-label>Username</mat-label>
           <input matInput formControlName="username">
           <mat-icon matPrefix>person</mat-icon>
@@ -15,7 +15,7 @@
 
 
       <div class="form-group">
-        <mat-form-field class="form-element" appearance="outline">
+        <mat-form-field class="form-element" appearance="fill">
           <mat-label>Password</mat-label>
           <input matInput formControlName="password">
           <mat-icon matPrefix>lock_open</mat-icon>
@@ -26,7 +26,7 @@
       </div>
 
       <div class="form-group">
-        <mat-form-field class="form-element" appearance="outline">
+        <mat-form-field class="form-element" appearance="fill">
           <mat-label>Email address</mat-label>
           <input matInput formControlName="email">
           <mat-icon matPrefix>alternate_email</mat-icon>
@@ -40,7 +40,7 @@
 
       <div class="personal-info" formGroupName="patientData">
         <div class="form-group">
-          <mat-form-field class="form-element" appearance="outline">
+          <mat-form-field class="form-element" appearance="fill">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name">
             <!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group">
-          <mat-form-field class="form-element" appearance="outline">
+          <mat-form-field class="form-element" appearance="fill">
             <mat-label>Surname</mat-label>
             <input matInput formControlName="surname">
             <!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group">
-          <mat-form-field class="form-element" appearance="outline">
+          <mat-form-field class="form-element" appearance="fill">
             <mat-label>Pesel</mat-label>
             <input matInput formControlName="pesel">
             <!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
@@ -74,13 +74,13 @@
 
         <div class="form-group">
           <div class="form-group">
-            <mat-form-field class="form-element" appearance="outline">
+            <mat-form-field class="form-element" appearance="fill">
               <mat-label>Birth Day</mat-label>
               <input matInput formControlName="birthDate">
               <!--            <mat-icon matPrefix>alternate_email</mat-icon>-->
             </mat-form-field>
             <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-feedback">
-              <div *ngIf="registerForm.controls.email.errors.required">Pesel is required</div>
+              <div *ngIf="registerForm.controls.email.errors.required">Birth date is required</div>
             </div>
           </div>
         </div>
@@ -92,9 +92,14 @@
       </div>
       <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 
-
-
     </form>
+  </mat-card>
+</div>
+
+<div class="mat-elevation-z8" *ngIf="success">
+  <mat-card>
+    <div>Your registration completed</div>
+    <button mat-button color="accent" (click)="redirectToLoginPage()">Take me to login page</button>
   </mat-card>
 </div>
 

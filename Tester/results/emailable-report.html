@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta charset='utf-8'>
+<title>TestNG Report</title>
+<style type="text/css">
+table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}
+td,th {border:1px solid #009;padding:.25em .5em}
+.result th {vertical-align:bottom}
+.param th {padding-left:1em;padding-right:1em}
+.param td {padding-left:.5em;padding-right:2em}
+.stripe td,.stripe th {background-color: #E6EBF9}
+.numi,.numi_attn {text-align:right}
+.total td {font-weight:bold}
+.passedodd td {background-color: #0A0}
+.passedeven td {background-color: #3F3}
+.skippedodd td {background-color: #CCC}
+.skippedodd td {background-color: #DDD}
+.failedodd td,.numi_attn {background-color: #F33}
+.failedeven td,.stripe .numi_attn {background-color: #D00}
+.stacktrace {white-space:pre;font-family:monospace}
+.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="testOverview">
+<tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">SingleServicesTests</a></td><td class="numi">15</td><td class="numi">15</td><td class="numi">0</td><td class="numi">0</td><td class="numi">8,1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em"><a href="#t2">IntegrationTests</a></td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0,0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="total"><td>Total</td>
+<td class="numi">15</td><td class="numi">15</td><td class="numi">0</td><td class="numi">0</td><td class="numi">8,1 seconds</td><td colspan="2">&nbsp;</td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr id="t1"><th colspan="5">SingleServicesTests &#8212; passed</th></tr>
+<tr class="passedodd"><td>BookVisitSystemTests.GetAllVisits</td><td><a href="#m1"><b>GetAllVisitsRequest</b>  </a></td><td class="numi">1</td><td>1610210265986</td><td class="numi">1437</td></tr>
+<tr class="passedeven"><td>BookVisitSystemTests.DeleteVisit</td><td><a href="#m2"><b>DeleteVisit</b>  </a></td><td class="numi">1</td><td>1610210265986</td><td class="numi">539</td></tr>
+<tr class="passedodd"><td>ReceiptGeneratorSystemTests.GetAllMedicals</td><td><a href="#m3"><b>GetAllMedicals</b>  </a></td><td class="numi">1</td><td>1610210265986</td><td class="numi">482</td></tr>
+<tr class="passedeven"><td>ReceiptGeneratorSystemTests.GetMedicalById</td><td><a href="#m4"><b>GetMedicalById</b>  </a></td><td class="numi">1</td><td>1610210265986</td><td class="numi">326</td></tr>
+<tr class="passedodd"><td>VisitReminderSystemTests.GetRemindersForPatient</td><td><a href="#m5"><b>GetRemindersForPatient</b>  </a></td><td class="numi">1</td><td>1610210265986</td><td class="numi">1006</td></tr>
+<tr class="passedeven"><td>VisitReminderSystemTests.PostReminder</td><td><a href="#m6"><b>CreateAnyReceipt</b>  </a></td><td class="numi">1</td><td>1610210266317</td><td class="numi">855</td></tr>
+<tr class="passedodd"><td>ReceiptGeneratorSystemTests.GetReceiptsForPatient</td><td><a href="#m7"><b>GetReceiptsForPatient</b>  </a></td><td class="numi">1</td><td>1610210267396</td><td class="numi">216</td></tr>
+<tr class="passedeven"><td>ReceiptGeneratorSystemTests.GetReceiptsForPatientForVisit</td><td><a href="#m8"><b>GetReceiptsForPatientForVisit</b>  </a></td><td class="numi">1</td><td>1610210267402</td><td class="numi">342</td></tr>
+<tr class="passedodd"><td>BookVisitSystemTests.GetVisitByID</td><td><a href="#m9"><b>GetVisitsByID</b>  </a></td><td class="numi">1</td><td>1610210267427</td><td class="numi">220</td></tr>
+<tr class="passedeven"><td>ReceiptGeneratorSystemTests.PostMedical</td><td><a href="#m10"><b>CreateAnyMedical</b>  </a></td><td class="numi">1</td><td>1610210267432</td><td class="numi">269</td></tr>
+<tr class="passedodd"><td>ReceiptGeneratorSystemTests.GetReceiptsForVisit</td><td><a href="#m11"><b>GetReceiptsForVisit</b>  </a></td><td class="numi">1</td><td>1610210267562</td><td class="numi">324</td></tr>
+<tr class="passedeven"><td>ReceiptGeneratorSystemTests.PostReceipt</td><td><a href="#m12"><b>PostReceipt</b>  </a></td><td class="numi">1</td><td>1610210267613</td><td class="numi">176</td></tr>
+<tr class="passedodd"><td rowspan="3">BookVisitSystemTests.PutVisit</td><td><a href="#m13"><b>PutVisit</b>  </a></td><td class="numi">1</td><td>1610210267890</td><td class="numi">571</td></tr><tr class="passedodd"><td><a href="#m14"><b>PutVisitWithMedicalsOnly</b>  </a></td><td class="numi">1</td><td>1610210268599</td><td class="numi">233</td></tr><tr class="passedodd"><td><a href="#m15"><b>PutVisitWithNotesOnly</b>  </a></td><td class="numi">1</td><td>1610210268987</td><td class="numi">297</td></tr>
+</table>
+<h1>SingleServicesTests</h1>
+<h2 id="m1">BookVisitSystemTests.PutVisit:PutVisit</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">BookVisitSystemTests.PutVisit:PutVisitWithNotesOnly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">ReceiptGeneratorSystemTests.GetReceiptsForVisit:GetReceiptsForVisit</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">BookVisitSystemTests.GetAllVisits:GetAllVisitsRequest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">ReceiptGeneratorSystemTests.GetAllMedicals:GetAllMedicals</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">ReceiptGeneratorSystemTests.PostReceipt:PostReceipt</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">VisitReminderSystemTests.PostReminder:CreateAnyReceipt</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">BookVisitSystemTests.GetVisitByID:GetVisitsByID</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">ReceiptGeneratorSystemTests.GetReceiptsForPatient:GetReceiptsForPatient</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">ReceiptGeneratorSystemTests.GetMedicalById:GetMedicalById</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">ReceiptGeneratorSystemTests.PostMedical:CreateAnyMedical</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">VisitReminderSystemTests.GetRemindersForPatient:GetRemindersForPatient</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">BookVisitSystemTests.DeleteVisit:DeleteVisit</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">BookVisitSystemTests.PutVisit:PutVisitWithMedicalsOnly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">ReceiptGeneratorSystemTests.GetReceiptsForPatientForVisit:GetReceiptsForPatientForVisit</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>IntegrationTests</h1>
+</body></html>

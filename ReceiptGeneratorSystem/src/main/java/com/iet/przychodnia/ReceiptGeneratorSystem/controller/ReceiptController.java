@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController("receipts")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/receipt")
 public class ReceiptController {
 

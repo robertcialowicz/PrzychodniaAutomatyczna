@@ -11,9 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class VisitService {
@@ -40,6 +38,7 @@ public class VisitService {
         visitObjectJSON.put("datetime", addedVisit.getDatetime());
         HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
         try{
+            //TODO ewentualnie zaktualizować adres seriwsu
             //release
             restTemplate.postForEntity("http://reminderssystem:9095/api/reminder", request, Void.class);
             //debug
@@ -47,8 +46,6 @@ public class VisitService {
         } catch (Exception e){
             e.getMessage();
         }
-
-        //TODO ewentualnie zaktualizować adres seriwsu
 
         return addedVisit;
     }
@@ -62,24 +59,55 @@ public class VisitService {
     }
 
     public int deleteVisit(UUID id) {
+        //send DELETE here to cancel reminder
+
+        //debug
+        //final String uri = "http://localhost:9095/api/reminder/visit/{id}";
+        //release
+        final String uri = "http://reminderssystem:9095/api/reminder/visit/{id}";
+        //TODO ewentualnie zaktualizować adres seriwsu
+        RestTemplate restTemplate = new RestTemplate();
+        Map<String, String> params = new HashMap<>();
+        params.put("id", id.toString());
+        try{
+            restTemplate.delete(uri, params);
+        } catch (Exception e){
+            e.getMessage();
+        }
+
         return visitRepository.deleteVisitById(id);
     }
 
     public Visit updateVisit(UUID id, Visit newVisit){
         //zaktualizuj wizyte w bazie
         Visit updatedVisit = visitRepository.updateVisitById(id, newVisit);
+        //TODO ewentualnie zaktualizować adres seriwsu
+        //wyslij DELETE do ReceiptGeneratorSystem aby pozbyć się starej recepty
+        //debug
+        //final String uri = "http://localhost:9096/api/receipt/visit/{id}";
+        //release
+        final String uri = "http://receiptssystem:9096/api/receipt/visit/{id}";
+        RestTemplate restTemplateDelete = new RestTemplate();
+        Map<String, String> params = new HashMap<>();
+        params.put("id", id.toString());
+        try{
+            restTemplateDelete.delete(uri, params);
+        } catch (Exception e){
+            e.getMessage();
+        }
 
-        for (UUID uuid : ExtractMedsAsList.ExtractMedsAsListFromString(newVisit.getMedicalsID())){
-            //wyslij POST do serwisu ReceiptGeneratorSystem
+        //wyslij POSTy do serwisu ReceiptGeneratorSystem
+        for (UUID uuidExtracted : ExtractMedsAsList.ExtractMedsAsListFromString(newVisit.getMedicalsID())){
             RestTemplate restTemplate = new RestTemplate();
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
             JSONObject visitObjectJSON = new JSONObject();
             visitObjectJSON.put("patientId", updatedVisit.getPatientID().toString());
             visitObjectJSON.put("visitId", updatedVisit.getId().toString());
-            visitObjectJSON.put("medicalsId", uuid.toString());
+            visitObjectJSON.put("medicalsId", uuidExtracted.toString());
             HttpEntity<String> request = new HttpEntity<String>(visitObjectJSON.toString(), httpHeaders);
             try{
+                //TODO ewentualnie zaktualizować adres seriwsu
                 //release
                 restTemplate.postForEntity("http://receiptssystem:9096/api/receipt", request, Void.class);
                 //debug
@@ -88,8 +116,6 @@ public class VisitService {
                 e.getMessage();
             }
         }
-
-        //TODO ewentualnie zaktualizować adres seriwsu
 
         return updatedVisit;
     }

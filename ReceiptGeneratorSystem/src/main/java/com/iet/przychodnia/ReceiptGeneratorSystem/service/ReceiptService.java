@@ -35,4 +35,8 @@ public class ReceiptService {
     public List<Receipt> getReceiptsForPatientForVisit(UUID patientId, UUID visitId){
         return receiptRepository.getReceiptsForPatientForVisit(patientId, visitId);
     }
+
+    public int deleteReceiptsByVisitId(UUID id){
+        return receiptRepository.deleteReceiptsByVisitId(id);
+    }
 }

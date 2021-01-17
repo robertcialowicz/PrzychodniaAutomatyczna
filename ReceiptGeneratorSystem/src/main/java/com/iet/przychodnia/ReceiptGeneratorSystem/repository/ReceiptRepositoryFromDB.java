@@ -82,4 +82,16 @@ public class ReceiptRepositoryFromDB implements IReceiptRepository {
                 });
         return receipts;
     }
+
+    @Override
+    public int deleteReceiptsByVisitId(UUID id) {
+        try {
+            final String sql = "DELETE FROM Receipts WHERE visitId=?";
+            jdbcTemplate.update(sql,id);
+            return 0;
+        }catch(Exception e) {
+            e.getMessage();
+            return 1;
+        }
+    }
 }

@@ -62,12 +62,35 @@ public class ReminderRepositoryFromDB implements IReminderRepository{
     @Override
     public int deleteOldReminders(UUID patientId) {
         try {
-            final String sql = "DELETE FROM Reminders WHERE (patientID=?) AND (date < ?)";
+            final String sql = "DELETE FROM Reminders WHERE (patientID=?) AND (datetime < ?)";
             //TODO implement as column 'date' is not accessible
-            //view can be created or inner join done
             //jdbcTemplate.update(sql, Instant.now().minus(1, ChronoUnit.WEEKS));
             return 0;
         }catch(Exception e) {
+            e.getMessage();
+            return 1;
+        }
+    }
+
+    @Override
+    public int deleteReminderById(UUID id) {
+        try{
+            final String sql = "DELETE FROM Reminders WHERE id=?";
+            jdbcTemplate.update(sql,id);
+            return 0;
+        }catch (Exception e){
+            e.getMessage();
+            return 1;
+        }
+    }
+
+    @Override
+    public int deleteReminderByVisitId(UUID id) {
+        try{
+            final String sql = "DELETE FROM Reminders WHERE visitID=?";
+            jdbcTemplate.update(sql,id);
+            return 0;
+        }catch (Exception e){
             e.getMessage();
             return 1;
         }

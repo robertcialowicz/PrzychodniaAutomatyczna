@@ -42,4 +42,9 @@ public class ReceiptController {
         return receiptService.getReceiptsForVisit(visitId);
     }
 
+    @DeleteMapping(path = "/visit/{id}")
+    public int deleteReceiptsByVisitId(@PathVariable("id") UUID id){
+        return receiptService.deleteReceiptsByVisitId(id);
+    }
+
 }

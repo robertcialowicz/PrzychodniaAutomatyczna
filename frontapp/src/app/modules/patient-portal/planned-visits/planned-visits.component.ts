@@ -15,13 +15,12 @@ export class PlannedVisitsComponent implements OnInit {
 
   ngOnInit(): void {
     this.visits = this.route.snapshot.data['visits'];
-    console.log(this.visits)
   }
 
-  cancelVisit(visitID: string) {
+  cancelVisit(visitID: string): void {
     this.apiService.cancelVisit(visitID).subscribe(res => {
       this.visits = this.visits.filter((el: any) => el.id  !== visitID)
-    })
+    });
   }
 
 }

@@ -1,0 +1,9 @@
+<h3 mat-dialog-title>You are logged in as {{data.user.name}} {{data.user.surname}}</h3>
+<div mat-dialog-content>
+  <div>Email: {{data.user.email}}</div>
+  <div>Pesel: {{data.user.pesel}}</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="accent" (click)="onNoClick()">Close</button>
+<!--  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>-->
+</div>

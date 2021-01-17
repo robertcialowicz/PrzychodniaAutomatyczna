@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {LOCAL_STORAGE, StorageService} from "ngx-webstorage-service";
+import {LOCAL_STORAGE, StorageService} from 'ngx-webstorage-service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
@@ -15,11 +15,15 @@ export class TokenService {
     console.log(this.storage.get(this.STORAGE_KEY) || 'LocaL storage is empty');
   }
 
+  public removeJwtToken(): void {
+    this.storage.remove(this.STORAGE_KEY);
+  }
+
   public getStoredJwtToken(): string {
     return this.storage.get(this.STORAGE_KEY);
   }
 
-  public decodeToken(token: string) {
+  public decodeToken(token: string): any {
     return this.jwtHelperService.decodeToken(token);
   }
 

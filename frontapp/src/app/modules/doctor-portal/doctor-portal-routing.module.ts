@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {FutureVisitsComponent} from './future-visits/future-visits.component';
 import {MainComponent} from './main/main.component';
-import {PlannedVisitsService, VisitsDetailsService} from './resolvers.service';
+import {MedicalsService, PlannedVisitsService, VisitsDetailsService} from './resolvers.service';
 import {VisitDetailsComponent} from './visit-details/visit-details.component';
 
 
@@ -18,7 +18,7 @@ const routes: Routes = [
     {
       path: 'future-visits/:visitId',
       component: VisitDetailsComponent,
-      resolve: { visitDetails: VisitsDetailsService }
+      resolve: { visitDetails: VisitsDetailsService, medicalsList: MedicalsService }
     }]
   }
 ];

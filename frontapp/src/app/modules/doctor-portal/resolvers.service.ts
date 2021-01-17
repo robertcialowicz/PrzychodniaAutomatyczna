@@ -20,27 +20,28 @@ export class PlannedVisitsService {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-      let visits = this.apiService.getVisits();
-      let users = this.apiService.getUsers();
-      let specializations = this.apiService.getSpecializations();
+    const visits = this.apiService.getVisits();
+    const users = this.apiService.getUsers();
+    const specializations = this.apiService.getSpecializations();
 
-      return forkJoin([visits, users, specializations]).pipe(
-        map((res: any) => res[0]
-          .filter((v:any) => {
-            const token = this.tokenService.getStoredJwtToken();
-            const currentUserID = this.tokenService.decodeToken(token).sub;
-            return v.doctorID === currentUserID && moment().diff(v.date) <=0;
-          })
-          .map((el:any) => {
-            const patient = res[1].find((u: any) => u.id === el.patientID).patientData;
-            const specialization = res[2].find((s: any) => s.id === el.specializationID);
-            el.patientName = patient.name;
-            el.patientSurname = patient.surname;
-            el.specializationName = specialization.name;
-            el.date = el.date.slice(0, -5);
-            return el;
-          })
-        ));
+    return forkJoin([visits, users, specializations]).pipe(
+      map((res: any) => res[0]
+        .filter((v: any) => {
+          const token = this.tokenService.getStoredJwtToken();
+          const currentUserID = this.tokenService.decodeToken(token).sub;
+          const specialization = res[2].find((s: any) => s.id === v.specializationID);
+          return v.doctorID === currentUserID && moment().diff(v.date) <= 0 && specialization;
+        })
+        .map((el: any) => {
+          const patient = res[1].find((u: any) => u.id === el.patientID).patientData;
+          const specialization = res[2].find((s: any) => s.id === el.specializationID);
+          el.patientName = patient.name;
+          el.patientSurname = patient.surname;
+          el.specializationName = specialization.name;
+          el.date = el.date.slice(0, -5);
+          return el;
+        })
+      ));
     }
 }
 
@@ -54,9 +55,9 @@ export class VisitsDetailsService {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    let visit = this.apiService.getVisitDetails(route.params.visitId);
-    let users = this.apiService.getUsers();
-    let specializations = this.apiService.getSpecializations();
+    const visit = this.apiService.getVisitDetails(route.params.visitId);
+    const users = this.apiService.getUsers();
+    const specializations = this.apiService.getSpecializations();
 
     let transformVisit = (res: any) => {
       const patient = res[1].find((u: any) => u.id === res[0].patientID).patientData;
@@ -70,6 +71,20 @@ export class VisitsDetailsService {
     return forkJoin([visit, users, specializations]).pipe(
       map((res: any) => transformVisit(res)
     ));
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MedicalsService {
+  constructor(private apiService: ApiService, private tokenService: TokenService) { }
+
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<any>|Promise<any>|any {
+    return this.apiService.getMedicals();
   }
 }
 

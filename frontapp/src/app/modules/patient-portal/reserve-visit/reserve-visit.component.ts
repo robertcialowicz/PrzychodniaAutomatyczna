@@ -7,9 +7,9 @@ import {default as _rollupMoment, Moment} from 'moment';
 
 const moment = _rollupMoment || _moment;
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import {ActivatedRoute} from "@angular/router";
-import {ApiService} from "../api.service";
-import {TokenService} from "../../../services/token.service";
+import {ActivatedRoute} from '@angular/router';
+import {ApiService} from '../api.service';
+import {TokenService} from '../../../services/token.service';
 export const MY_FORMATS = {
   parse: {
     dateInput: 'LL',
@@ -41,7 +41,7 @@ export class ReserveVisitComponent implements OnInit {
   posssibleVisits = null;
   dateFormat = 'YYYY-MM-DD';
   reservationSucceed = false;
-  visitDetails:any = null;
+  visitDetails: any = null;
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
@@ -68,26 +68,24 @@ export class ReserveVisitComponent implements OnInit {
 
   ngOnInit(): void {
     this.specializations = this.route.snapshot.data['specializations'];
-    console.log(this.specializations)
   }
 
-  getPossibleVisits() {
+  getPossibleVisits(): void {
     this.apiService.getPossibleVisitsByDoctor(
       this.doctrorFormGroup.value.doctorCtrl,
       moment(this.periodForm.value.startDate, "x").format(this.dateFormat),
       moment(this.periodForm.value.endDate, "x").format(this.dateFormat)).subscribe((res: any) => {
         this.posssibleVisits = res;
-    })
+    });
   }
 
-  getDoctorsBySpecialization() {
-    this.apiService.getDoctorsBySpecialization(this.firstFormGroup.value.firstCtrl).subscribe((res:any) => {
-      console.log(res)
+  getDoctorsBySpecialization(): void {
+    this.apiService.getDoctorsBySpecialization(this.firstFormGroup.value.firstCtrl).subscribe((res: any) => {
       this.doctors = res;
-    })
+    });
   }
 
-  reserveVisit() {
+  reserveVisit(): void {
     const token = this.tokenService.getStoredJwtToken();
     const currentUserID = this.tokenService.decodeToken(token).sub;
 
@@ -98,14 +96,15 @@ export class ReserveVisitComponent implements OnInit {
       patientID: currentUserID,
       specializationID: this.firstFormGroup.value.firstCtrl,
       medicalsID: null
-    }
+    };
+
     this.apiService.reserveVisit(visit).subscribe(res => {
       this.reservationSucceed = true;
       this.visitDetails = res;
 
     }, error => {
       this.reservationSucceed = false;
-    })
+    });
   }
 
 

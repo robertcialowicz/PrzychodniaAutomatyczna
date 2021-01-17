@@ -37,9 +37,17 @@
       </mat-form-field>
     </div>
     <div class="medicaments">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="fill">
         <mat-label>Medicaments</mat-label>
-        <textarea type="text" matInput [(ngModel)]="medicaments" (ngModelChange)="updateVisitDetails()" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
+        <mat-select [(ngModel)]="medicaments" (selectionChange)="updateVisitDetails()" multiple>
+          <mat-select-trigger>
+            {{medicaments.length ? medicaments[0].name : ''}}
+            <span *ngIf="medicaments.length > 1" class="example-additional-selection">
+              (+{{medicaments.length - 1}} {{medicaments.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let m of medicalList" [value]="m">{{m.name}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </mat-card-content>

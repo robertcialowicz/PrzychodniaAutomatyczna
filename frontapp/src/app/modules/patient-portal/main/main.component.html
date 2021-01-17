@@ -1,6 +1,35 @@
-<div class="top-bar"></div>
+<div class="top-bar">
+  <button class="loged-in-user" mat-button [matMenuTriggerFor]="menu" xPosition="before"><mat-icon>more_vert</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openDialog()"><mat-icon>person</mat-icon>Account</button>
+    <button mat-menu-item (click)="logOut()"><mat-icon>login</mat-icon>Log out</button>
+  </mat-menu>
+</div>
 <div class="main-wrapper">
   <app-navigation></app-navigation>
+  <div *ngIf="visible" class="wrapper">
+    <mat-card class="mat-card-general">
+      <div class="welcome-text">Hello!</div>
+      <div *ngIf="!reminders.length">
+        <div class="no-visits-text">Actually Your have no scheduled visits.</div>
+        <div class="action"><button mat-button routerLink="/patients/reserve-visit">Book one</button></div>
+      </div>
+      <div *ngIf="reminders.length">
+        <div class="no-visits-text">Your have scheduled visits:</div>
+        <mat-card class="reminder" *ngFor="let r of reminders">
+          <table>
+            <tr>
+              <td>{{r.datetime}}</td>
+              <td>Doctor {{r?.doctorName}} {{r.doctorSurname}}</td>
+              <!--              <td><button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">-->
+<!--                <mat-icon (click)="cancelVisit(v.id)">cancel</mat-icon>-->
+<!--              </button></td>-->
+            </tr>
+          </table>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
   <router-outlet></router-outlet>
 </div>
 

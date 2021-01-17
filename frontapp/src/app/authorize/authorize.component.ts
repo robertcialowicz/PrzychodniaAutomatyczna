@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ApiService} from "../services/api.service";
-import {TokenService} from "../services/token.service";
-import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ApiService} from '../services/api.service';
+import {TokenService} from '../services/token.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-authorize',
@@ -32,17 +32,16 @@ export class AuthorizeComponent implements OnInit {
 
   onSubmit(): void {
     this.submitted = true;
-    if(this.authorizeForm.valid) {
-      this.apiService.logIn(this.authorizeForm.value).subscribe((res:any) => {
-        this.tokenService.storeJwtToken(res.jwtToken)
+    if (this.authorizeForm.valid) {
+      this.apiService.logIn(this.authorizeForm.value).subscribe((res: any) => {
+        this.tokenService.storeJwtToken(res.jwtToken);
         const userInfo = this.tokenService.decodeToken(res.jwtToken);
-        console.log(userInfo.roles)
-        if(userInfo.roles.includes("doctor")) {
-          this.router.navigate(['/doctors']);
+        if (userInfo.roles.includes('doctor')) {
+          this.router.navigate(['/doctors/future-visits']);
         } else {
           this.router.navigate(['/patients']);
         }
-      })
+      });
     }
   }
 

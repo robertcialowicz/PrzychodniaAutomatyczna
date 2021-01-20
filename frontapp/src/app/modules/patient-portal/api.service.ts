@@ -8,11 +8,16 @@ import {Observable} from 'rxjs';
 })
 export class ApiService {
 
-  userServiceUrl = 'http://172.25.0.11:9092/api/user-authentication-system';
+  userServiceUrl = 'http://localhost:9092/api/user-authentication-system';
+  //userServiceUrl = 'http://zuulgwsystem:9092/api/user-authentication-system';
   visitsServiceUrl = 'http://localhost:9092/api/visit';
+  //visitsServiceUrl = 'http://zuulgwsystem:9092/api/visit';
   visitsReminderUrl = 'http://localhost:9092/api/reminder';
+  //visitsReminderUrl = 'http://zuulgwsystem:9092/api/reminder';
   receiptsUrl = 'http://localhost:9092/api/receiptgeneratorsystem/api/receipt';
+  //receiptsUrl = 'http://zuulgwsystem:9092/api/receiptgeneratorsystem/api/receipt';
   medicamentsUrl = 'http://localhost:9092/api/receiptgeneratorsystem/api/medicals';
+  //medicamentsUrl = 'http://zuulgwsystem:9092/api/receiptgeneratorsystem/api/medicals';
 
   constructor(private httpClient: HttpClient) {}
 

@@ -9,8 +9,8 @@ services:
       - 4200:4200
     depends_on:
       - zuulgwsystem
-    #links:
-    #  - "zuulgwsystem:zuulgwsystem"
+    links:
+      - "zuulgwsystem:zuulgwsystem"
 
   eurekasystem:
     image: eurekasystem

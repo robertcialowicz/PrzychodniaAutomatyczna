@@ -6,9 +6,12 @@ import { delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  userServiceUrl = "http://172.25.0.11:9092/api/user-authentication-system";
+  userServiceUrl = "http://localhost:9092/api/user-authentication-system";
+  //userServiceUrl = "http://zuulgwsystem:9092/api/user-authentication-system";
   visitsServiceUrl = "http://localhost:9092/api/visit";
+  //visitsServiceUrl = "http://zuulgwsystem:9092/api/visit";
   receiptGeneratorSystemUrl = "http://localhost:9092/api/receiptgeneratorsystem";
+  //receiptGeneratorSystemUrl = "http://zuulgwsystem:9092/api/receiptgeneratorsystem";
 
   constructor(private httpClient: HttpClient) { }
 

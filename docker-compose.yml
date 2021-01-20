@@ -6,11 +6,11 @@ services:
     image: frontapp
     build: ./frontapp/
     ports:
-      - 4201:4200
+      - 4200:4200
     depends_on:
       - zuulgwsystem
-    links:
-      - "zuulgwsystem:zuulgwsystem"
+    #links:
+    #  - "zuulgwsystem:zuulgwsystem"
 
   eurekasystem:
     image: eurekasystem
@@ -45,6 +45,9 @@ services:
 
   grafana:
     image: grafana/grafana
+    build: ./grafana/
+    volumes: 
+      - ./grafana/data:/var/lib/grafana
     depends_on:
       - prometheus
     ports:

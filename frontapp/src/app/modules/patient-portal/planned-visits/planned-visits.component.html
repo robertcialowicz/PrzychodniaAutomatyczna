@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="visits.length">
   <mat-card *ngFor="let v of visits">
     <table>
       <tr>
@@ -10,5 +10,12 @@
         </button></td>
       </tr>
     </table>
+  </mat-card>
+</div>
+
+<div class="wrapper" *ngIf="!visits.length">
+  <mat-card>
+    <div class="no-visits-text">Actually Your have no scheduled visits.</div>
+    <div class="action"><button mat-button routerLink="/patients/reserve-visit">Book one</button></div>
   </mat-card>
 </div>

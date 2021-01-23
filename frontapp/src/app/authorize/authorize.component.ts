@@ -28,6 +28,7 @@ export class AuthorizeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('hello')
   }
 
   onSubmit(): void {

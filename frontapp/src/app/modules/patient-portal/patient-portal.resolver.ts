@@ -110,8 +110,8 @@ export class PatientPortalReceiptsResolver implements Resolve<boolean> {
       map((res: any) => res[0]
         .map((el: any) => {
           el.medicamentName  = res[1].find((m: any) => m.id === el.medicalIds) ? res[1].find((m: any) => m.id === el.medicalIds).name : '';
-
           el.visitDate = res[2].find((v: any) => v.id === el.visitId).date.slice(0, -5);
+          el.notes = res[2].find((v: any) => v.id === el.visitId).notes;
           return el;
         })
       ));

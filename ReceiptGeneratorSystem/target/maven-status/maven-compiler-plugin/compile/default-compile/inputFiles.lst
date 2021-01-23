@@ -1,0 +1,11 @@
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\controller\ReceiptController.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\model\Receipt.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\repository\MedicalRepositoryFromDB.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\repository\ReceiptRepositoryFromDB.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\controller\MedicalController.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\repository\IReceiptRepository.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\service\ReceiptService.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\model\Medical.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\repository\IMedicalRepository.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\service\MedicalService.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\ReceiptGeneratorSystem\src\main\java\com\iet\przychodnia\ReceiptGeneratorSystem\ReceiptGeneratorSystemApplication.java

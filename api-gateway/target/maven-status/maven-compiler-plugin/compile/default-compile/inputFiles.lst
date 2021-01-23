@@ -1,0 +1,9 @@
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\Jwt.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\JwtTokenAuthentication.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\JwtRequestFilter.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\exceptions\JwtInvalidSignatureException.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\SecurityConfig.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\ApiGatewayApplication.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\exceptions\JwtExpiredException.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\exceptions\UnauthorizedException.java
+D:\40_studia\informatyka\semestr_7\PrzychodniaAutomatyczna\api-gateway\src\main\java\com\iet\przychodnia\apigateway\jwt\RSA.java

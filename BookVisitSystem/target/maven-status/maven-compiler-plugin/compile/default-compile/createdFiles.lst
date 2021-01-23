@@ -1,0 +1,8 @@
+com\iet\przychodnia\BookVisitSystem\service\FindFreeVisits.class
+com\iet\przychodnia\BookVisitSystem\BookVisitSystemApplication.class
+com\iet\przychodnia\BookVisitSystem\model\Visit.class
+com\iet\przychodnia\BookVisitSystem\service\VisitService.class
+com\iet\przychodnia\BookVisitSystem\repository\VisitRepositoryAccessFromDB.class
+com\iet\przychodnia\BookVisitSystem\service\ExtractMedsAsList.class
+com\iet\przychodnia\BookVisitSystem\repository\IVisitRepository.class
+com\iet\przychodnia\BookVisitSystem\controller\VisitController.class

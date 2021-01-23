@@ -2,25 +2,34 @@ version: '3.7'
 
 services:
 
-  frontapp:
-    image: frontapp
-    ports:
-      - 4200:4200
-    depends_on:
-      - zuulgwsystem
+  # frontapp:
+  #   image: frontapp
+  #   networks:
+  #     - PrzychodniaOverlay
+  #   ports:
+  #     - 4200:4200
+  #   depends_on:
+  #     - zuulgwsystem
 
   eurekasystem:
     image: eurekasystem
+    networks:
+      - PrzychodniaOverlay
     ports: 
       - 8761:8761
 
   zuulgwsystem:
     image: zuulgwsystem
+    networks:
+      - PrzychodniaOverlay
     ports: 
       - 9092:9092
+    
 
   prometheus:
     image: prometheus
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 9090:9090
 
@@ -30,6 +39,8 @@ services:
       - ./grafana/data:/var/lib/grafana
     depends_on:
       - prometheus
+    networks:
+      - PrzychodniaOverlay
     ports:
       - "3000:3000"
 
@@ -41,11 +52,15 @@ services:
       ACCEPT_EULA: "Y"
     volumes: 
       - ./user-authentication-system/database/dbUsersVol:/var/opt/mssql/data
+    networks:
+      - PrzychodniaOverlay
     ports:
       - "1435:1433"
 
   user-authentication-system:
     image: user-authentication-system
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 9093:9093
     depends_on:
@@ -60,11 +75,15 @@ services:
       ACCEPT_EULA: "Y"
     volumes:
       - ./VisitReminderSystem/database/dbRemindersVol:/var/opt/mssql/data
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 1434:1433
 
   reminderssystem:
     image: reminderssystem
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 9095:9095
     depends_on:
@@ -79,11 +98,15 @@ services:
       ACCEPT_EULA: "Y"
     volumes:
       - ./ReceiptGeneratorSystem/database/dbMedicalsVol:/var/opt/mssql/data
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 1437:1433
 
   receiptssystem:
     image: receiptssystem
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 9096:9096
     depends_on:
@@ -98,13 +121,20 @@ services:
       ACCEPT_EULA: "Y"
     volumes:
       - ./BookVisitSystem/database/dbVisitsVol:/var/opt/mssql/data
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 1436:1433
 
   visitsystem:
     image: visitsystem
+    networks:
+      - PrzychodniaOverlay
     ports:
       - 9094:9094
     depends_on:
       - dbvisits
       - eurekasystem
+
+networks:
+  PrzychodniaOverlay:

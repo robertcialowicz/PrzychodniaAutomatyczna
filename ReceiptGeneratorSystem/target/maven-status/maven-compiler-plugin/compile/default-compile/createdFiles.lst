@@ -1,0 +1,11 @@
+com\iet\przychodnia\ReceiptGeneratorSystem\controller\MedicalController.class
+com\iet\przychodnia\ReceiptGeneratorSystem\service\ReceiptService.class
+com\iet\przychodnia\ReceiptGeneratorSystem\model\Medical.class
+com\iet\przychodnia\ReceiptGeneratorSystem\repository\MedicalRepositoryFromDB.class
+com\iet\przychodnia\ReceiptGeneratorSystem\repository\IReceiptRepository.class
+com\iet\przychodnia\ReceiptGeneratorSystem\model\Receipt.class
+com\iet\przychodnia\ReceiptGeneratorSystem\ReceiptGeneratorSystemApplication.class
+com\iet\przychodnia\ReceiptGeneratorSystem\repository\IMedicalRepository.class
+com\iet\przychodnia\ReceiptGeneratorSystem\controller\ReceiptController.class
+com\iet\przychodnia\ReceiptGeneratorSystem\repository\ReceiptRepositoryFromDB.class
+com\iet\przychodnia\ReceiptGeneratorSystem\service\MedicalService.class

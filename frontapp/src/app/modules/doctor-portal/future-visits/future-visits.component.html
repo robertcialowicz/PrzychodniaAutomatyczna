@@ -15,7 +15,7 @@
         </mat-form-field>
       </form>
   </div>
-  <mat-card-content>
+  <mat-card-content *ngIf="plannedVisits.length">
     <div *ngFor="let visit of plannedVisits" class="visit"
           (click)="showVisitDetails(visit.id)">
       <mat-card><table>
@@ -30,6 +30,9 @@
       </table>
       </mat-card>
     </div>
+  </mat-card-content>
+  <mat-card-content *ngIf="!plannedVisits.length">
+    <div class="no-panned-visits">No planned visits due this period</div>
   </mat-card-content>
 </mat-card>
 

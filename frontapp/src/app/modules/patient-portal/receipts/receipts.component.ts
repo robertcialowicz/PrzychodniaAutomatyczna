@@ -34,6 +34,7 @@ export class ReceiptsComponent implements OnInit {
     });
 
     this.receipts = reduced;
+    console.log(this.receipts)
   }
 
 }

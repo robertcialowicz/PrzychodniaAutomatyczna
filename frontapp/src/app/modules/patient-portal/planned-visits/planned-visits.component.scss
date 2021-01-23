@@ -19,6 +19,22 @@
     .planned-visit-specialization {
       color: orange;
     }
+
+    .no-visits-text {
+      text-align: center;
+      font-size: 20px;
+      color: orange;
+      margin-top: 40px;
+    }
+    .action {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      .mat-button {
+        background-color: rgba(255,255,255,0.5);
+        height: 60px;
+      }
+    }
   }
 
 }

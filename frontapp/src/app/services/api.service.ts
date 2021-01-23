@@ -6,8 +6,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ApiService {
-  userServiceUrl = "http://localhost:9092/api/user-authentication-system";
-  //userServiceUrl = "http://zuulgwsystem:9092/api/user-authentication-system";
+  userServiceUrl = 'http://localhost:9092/api/user-authentication-system';
+  // userServiceUrl = 'http://zuulgwsystem:9092/api/user-authentication-system';
   constructor(private httpClient: HttpClient) {}
 
 

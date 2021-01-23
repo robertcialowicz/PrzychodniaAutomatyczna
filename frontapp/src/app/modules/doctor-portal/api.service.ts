@@ -6,12 +6,12 @@ import { delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  userServiceUrl = "http://localhost:9092/api/user-authentication-system";
-  //userServiceUrl = "http://zuulgwsystem:9092/api/user-authentication-system";
-  visitsServiceUrl = "http://localhost:9092/api/visit";
-  //visitsServiceUrl = "http://zuulgwsystem:9092/api/visit";
-  receiptGeneratorSystemUrl = "http://localhost:9092/api/receiptgeneratorsystem";
-  //receiptGeneratorSystemUrl = "http://zuulgwsystem:9092/api/receiptgeneratorsystem";
+  userServiceUrl = 'http://localhost:9092/api/user-authentication-system';
+  // userServiceUrl = 'http://zuulgwsystem:9092/api/user-authentication-system';
+  visitsServiceUrl = 'http://localhost:9092/api/visit';
+  // visitsServiceUrl = 'http://zuulgwsystem:9092/api/visit';
+  receiptGeneratorSystemUrl = 'http://localhost:9092/api/receiptgeneratorsystem';
+  // receiptGeneratorSystemUrl = 'http://zuulgwsystem:9092/api/receiptgeneratorsystem';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,11 +25,11 @@ export class ApiService {
 
 
   getVisitDetails(visitID: any): Observable<any> {
-      return this.httpClient.get(`${this.visitsServiceUrl}/api/visit/${visitID}`)
+      return this.httpClient.get(`${this.visitsServiceUrl}/api/visit/${visitID}`);
   }
 
   getUsers(): Observable<any>  {
-    return this.httpClient.get(`${this.userServiceUrl}/api/user`)
+    return this.httpClient.get(`${this.userServiceUrl}/api/user`);
   }
 
   getSpecializations(): Observable<any> {

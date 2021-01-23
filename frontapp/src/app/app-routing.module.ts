@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {RegisterDoctorComponent} from './register-doctor/register-doctor.component';
 import {RegisterPatientComponent} from './register-patient/register-patient.component';
-import {AuthorizeComponent} from "./authorize/authorize.component";
+import {AuthorizeComponent} from './authorize/authorize.component';
+import {PatientPortalSpecializationsResolver} from './modules/patient-portal/patient-portal.resolver';
 const routes: Routes = [
   {
     path: 'doctors',
@@ -19,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'register-doctor',
-    component: RegisterDoctorComponent
+    component: RegisterDoctorComponent,
+    resolve: { specializations: PatientPortalSpecializationsResolver }
   },
   {
     path: 'register-patient',

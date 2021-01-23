@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+
+  .wrapper {
+    margin: 50px;
+  }
+
+  .mat-card {
+    margin-bottom: 20px;
+    width: 700px;
+
+    table {
+      width: 100%;
+    }
+
+    .medicaments-label {
+      color: orange;
+
+      ul {
+        color: #262626;
+      }
+    }
+
+    .visit-date-label {
+      padding-left: 30px;
+    }
+  }
+}

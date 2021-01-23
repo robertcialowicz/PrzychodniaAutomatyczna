@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation/navigation.component';
 import {PatientPortalRoutingModule} from './patient-portal-routing.module';
-import { MainComponent } from './main/main.component';
+import {AccountInfoDialogComponent, MainComponent} from './main/main.component';
 import { ReserveVisitComponent } from './reserve-visit/reserve-visit.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -15,11 +15,12 @@ import {MatSelectModule} from "@angular/material/select";
 import { PlannedVisitsComponent } from './planned-visits/planned-visits.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
-
-
+import { ReceiptsComponent } from './receipts/receipts.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [NavigationComponent, MainComponent, ReserveVisitComponent, PlannedVisitsComponent],
+  declarations: [NavigationComponent, MainComponent, ReserveVisitComponent, PlannedVisitsComponent, ReceiptsComponent],
   imports: [
     CommonModule,
     PatientPortalRoutingModule,
@@ -32,8 +33,10 @@ import {MatIconModule} from "@angular/material/icon";
     MatDatepickerModule,
     MatOptionModule,
     MatCardModule,
-    MatIconModule
-
-  ]
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule
+  ],
+  entryComponents: []
 })
 export class PatientPortalModule { }

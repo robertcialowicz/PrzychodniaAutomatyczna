@@ -22,7 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                    "/**/configuration/security",
                                    "/**/swagger-ui.html",
                                    "/**/webjars/**",
-                                    "/**/actuator/prometheus");
+                                    "/**/actuator/prometheus",
+                                    "/actuator/prometheus",
+                                    "/**/api/specializations");
     }
 
     protected void configure(HttpSecurity httpSecurity) throws Exception {

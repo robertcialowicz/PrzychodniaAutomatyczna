@@ -16,8 +16,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/specializations")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/api/specializations")
 @Value
 public class DoctorSpecializationsController {
 

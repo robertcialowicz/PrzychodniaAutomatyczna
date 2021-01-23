@@ -1,4 +1,10 @@
-<div class="top-bar"></div>
+<div class="top-bar">
+  <button class="loged-in-user" mat-button [matMenuTriggerFor]="menu" xPosition="before"><mat-icon>more_vert</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openDialog()"><mat-icon>person</mat-icon>Account</button>
+    <button mat-menu-item (click)="logOut()"><mat-icon>login</mat-icon>Log out</button>
+  </mat-menu>
+</div>
 <div class="main-wrapper">
   <app-navigation></app-navigation>
   <router-outlet></router-outlet>

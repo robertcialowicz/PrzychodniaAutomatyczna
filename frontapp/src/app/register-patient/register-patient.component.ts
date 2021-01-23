@@ -1,13 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApiService} from "../services/api.service";
-import {TokenService} from "../services/token.service";
-import {Router} from "@angular/router";
+import {ApiService} from '../services/api.service';
+import {Router} from '@angular/router';
+import {MomentDateAdapter} from '@angular/material-moment-adapter';
+import * as _moment from 'moment';
+// @ts-ignore
+import {default as _rollupMoment, Moment} from 'moment';
+
+const moment = _rollupMoment || _moment;
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'YYYY-MM-DD',
+    monthYearLabel: 'YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'YYYY',
+  },
+};
 
 @Component({
   selector: 'app-register-patient',
   templateUrl: './register-patient.component.html',
-  styleUrls: ['./register-patient.component.scss']
+  styleUrls: ['./register-patient.component.scss'],
+  providers: [
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
+  ]
 })
 export class RegisterPatientComponent implements OnInit {
   registerForm: FormGroup;
@@ -31,6 +53,10 @@ export class RegisterPatientComponent implements OnInit {
         birthDate: ['', Validators.required]
       })
     });
+
+    this.registerForm.valueChanges.subscribe(res => {
+      this.registerForm.value.patientData.birthDate = moment(this.registerForm.value.patientData.birthDate).format('YYYY-MM-DD');
+    });
   }
 
   ngOnInit(): void {
@@ -40,15 +66,14 @@ export class RegisterPatientComponent implements OnInit {
     this.submitted = true;
 
     if (this.registerForm.valid) {
-      this.apiService.register(this.registerForm.value).subscribe((res:any)  => {
-        this.success = true
-        console.log(res)
+      this.apiService.register(this.registerForm.value).subscribe((res: any)  => {
+        this.success = true;
       });
     }
   }
 
-  redirectToLoginPage() {
-    this.router.navigate(['/authorize'])
+  redirectToLoginPage(): void {
+    this.router.navigate(['/authorize']);
   }
 
 

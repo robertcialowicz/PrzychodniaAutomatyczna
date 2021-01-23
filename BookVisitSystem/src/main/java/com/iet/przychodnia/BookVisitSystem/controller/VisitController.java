@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/visit")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/api/visit")
 public class VisitController {
     private final VisitService visitService;
 
@@ -52,7 +52,7 @@ public class VisitController {
 
     @PutMapping(path = "/{id}")
     public Visit updateVisit(@PathVariable("id") UUID id, @NonNull @RequestBody Visit visitToUpdate){
-        return visitService.updateVisit(visitToUpdate);
+        return visitService.updateVisit(id, visitToUpdate);
     }
 
     @GetMapping(path="/search/{fromDate}/{toDate}")
@@ -72,7 +72,6 @@ public class VisitController {
 
     @GetMapping(path="/search/freeBySpec/{id}/{fromDate}/{toDate}")
     public List<Visit> searchForAvailableVisitsInGivenPeriodBySpecialization(@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate, @PathVariable("id") UUID id){
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>dupa " + fromDate + "-" + toDate);
         return visitService.searchForAvailableVisitsInGivenPeriodBySpecialization(fromDate, toDate, id);
     }
 

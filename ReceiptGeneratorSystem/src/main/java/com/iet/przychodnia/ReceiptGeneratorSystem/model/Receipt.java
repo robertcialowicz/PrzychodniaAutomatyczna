@@ -40,7 +40,7 @@ public class Receipt {
                 "id=" + id +
                 ", patientId=" + patientId +
                 ", visitId=" + visitId +
-                ", medicalId=" + medicalId +
+                ", medicalsId=" + medicalId +
                 '}';
     }
 

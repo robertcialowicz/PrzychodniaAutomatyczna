@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <mat-card *ngFor="let r of receipts">
+    <table>
+      <tr>
+        <td class="visit-date-label">Date: {{r.visitDate}}</td>
+        <td class="medicaments-label"><mat-icon>healing</mat-icon>Medicaments:
+          <ul>
+            <li *ngFor="let m of r.medicalIds"> {{m.name}}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+</div>

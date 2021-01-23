@@ -21,4 +21,6 @@ public interface IReceiptRepository {
     List<Receipt> getReceiptsForVisit(UUID id);
 
     List<Receipt> getReceiptsForPatientForVisit(UUID patientID, UUID visitID);
+
+    int deleteReceiptsByVisitId(UUID id);
 }

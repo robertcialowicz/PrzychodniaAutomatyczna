@@ -32,4 +32,11 @@ public class ReminderService {
         return reminderRepository.deleteOldReminders(patientId);
     }
 
+    public int deleteReminderById(UUID id){
+        return reminderRepository.deleteReminderById(id);
+    }
+
+    public int deleteReminderByVisitId(UUID id){
+        return reminderRepository.deleteReminderByVisitId(id);
+    }
 }

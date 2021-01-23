@@ -2,6 +2,16 @@ version: '3.7'
 
 services:
 
+  frontapp:
+    image: frontapp
+    build: ./frontapp/
+    ports:
+      - 4200:4200
+    depends_on:
+      - zuulgwsystem
+    links:
+      - "zuulgwsystem:zuulgwsystem"
+
   eurekasystem:
     image: eurekasystem
     build: ./discavery-server/
@@ -35,6 +45,9 @@ services:
 
   grafana:
     image: grafana/grafana
+    build: ./grafana/
+    volumes: 
+      - ./grafana/data:/var/lib/grafana
     depends_on:
       - prometheus
     ports:

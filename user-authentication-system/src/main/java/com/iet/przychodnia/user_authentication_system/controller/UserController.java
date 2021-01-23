@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/user")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/api/user")
 @Value
 public class UserController {
 

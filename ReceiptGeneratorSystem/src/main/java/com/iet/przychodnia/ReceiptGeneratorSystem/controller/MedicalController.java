@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
+@RestController("medicals")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/medicals")
 public class MedicalController {
 

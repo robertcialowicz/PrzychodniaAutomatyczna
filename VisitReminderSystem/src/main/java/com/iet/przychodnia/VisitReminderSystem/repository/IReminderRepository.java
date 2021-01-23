@@ -17,4 +17,8 @@ public interface IReminderRepository {
 
     int deleteOldReminders(UUID patientId);
 
+    int deleteReminderById(UUID id);
+
+    int deleteReminderByVisitId(UUID id);
+
 }

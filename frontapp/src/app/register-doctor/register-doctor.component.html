@@ -72,24 +72,15 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <mat-form-field class="form-element" appearance="fill">
-            <mat-chip-list #chipList formArrayName="specialization">
-              <mat-chip *ngFor="let s of specializations['controls']; let i=index;"
-                        [selectable]="true"
-                        [removable]="true"
-                        (removed)="remove(i)">
-                {{ s['value'].specialization }}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-              </mat-chip>
-              <input placeholder="Specializations..."
-                     [matChipInputFor]="chipList"
-                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                     [matChipInputAddOnBlur]="addOnBlur"
-                     (matChipInputTokenEnd)="add($event)">
-            </mat-chip-list>
+        <div class="specializations">
+          <mat-form-field appearance="fill">
+            <mat-label>Specializations</mat-label>
+            <mat-select formControlName="specialization" multiple>
+              <mat-option *ngFor="let s of specializatons" [value]="s.id">{{s.name}}</mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
+
       </div>
 
       <div class="form-group">
